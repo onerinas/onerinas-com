@@ -3,7 +3,7 @@
  * Install article images from local R2 export into src/images/articles/
  * and rewrite markdown to use /images/articles/… paths.
  *
- * Mapping: data/article-images.yml (curated — remote URLs are 404)
+ * Mapping: data/article-images.yml (curated; remote URLs are 404)
  * Source:  ~/projects/onerinas-blog-images (override with IMAGE_SOURCE)
  */
 

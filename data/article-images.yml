@@ -1,5 +1,5 @@
 # Curated mapping: article markdown file → local R2 filename (highest quality chosen).
-# Duplicates skipped — see data/image-mapping.json after install for full audit.
+# Duplicates skipped. See data/image-mapping.json after install for full audit.
 #
 # Format:
 #   - article: src/articles/{file}.md
@@ -10,7 +10,7 @@
 - article: 2-10-day-streak-for-a-big-time-procrastinator.md
   images:
     - source: 2zpzv7lsco6bu6lpuy75bx10ijic.jpg
-      # duplicate of y733pz2g1euimfyevd61ih400zbo.jpg — same md5, kept larger name
+      # duplicate of y733pz2g1euimfyevd61ih400zbo.jpg: same md5, kept larger name
 
 - article: 3-why-and-how-i-built-highscore-domains.md
   images:

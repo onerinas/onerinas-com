@@ -68,7 +68,7 @@ function pageDescription(data, site) {
   }
 
   if (data.tags && data.tags.includes("articles")) {
-    return `${data.title} — writing by ${site.name}.`;
+    return `${data.title}, by ${site.name}.`;
   }
 
   return site.description;

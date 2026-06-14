@@ -15,7 +15,7 @@ You got hurt. 
   
 You felt it’s not acceptable.   
   
-— TIME FLIES —  
+- TIME FLIES -
   
 You got a chance to treat them the same way.   
   

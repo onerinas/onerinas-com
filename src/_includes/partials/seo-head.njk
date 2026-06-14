@@ -4,13 +4,13 @@
 {%- if title and not isHome -%}
   {%- set seoTitle = title ~ " · " ~ site.name -%}
 {%- else -%}
-  {%- set seoTitle = site.name ~ " — " ~ site.description -%}
+  {%- set seoTitle = site.name ~ " | " ~ site.description -%}
 {%- endif -%}
 
 {%- if description -%}
   {%- set seoDescription = description -%}
 {%- elif isArticle -%}
-  {%- set seoDescription = title ~ " — writing by " ~ site.name ~ "." -%}
+  {%- set seoDescription = title ~ ", by " ~ site.name ~ "." -%}
 {%- else -%}
   {%- set seoDescription = site.description -%}
 {%- endif -%}

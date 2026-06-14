@@ -1,8 +1,8 @@
-# onerinas — personal site + blog
+# onerinas: personal site + blog
 
 Static site built with [Eleventy (11ty)](https://www.11ty.dev/). Hosted free on [Cloudflare Pages](https://pages.cloudflare.com/).
 
-**Domain:** `onerinas.com` — canonical URLs use `site.json` → `url`. All paths are root-relative (`/about/`, `/articles/…`).
+**Domain:** `onerinas.com`: canonical URLs use `site.json` → `url`. All paths are root-relative (`/about/`, `/articles/…`).
 
 **Legacy subdomain:** `blog.onerinas.com` should 301 to `onerinas.com` via a Cloudflare Redirect Rule (see deploy section).
 
@@ -23,7 +23,7 @@ Static site built with [Eleventy (11ty)](https://www.11ty.dev/). Hosted free on 
 │   ├── _includes/
 │   │   ├── layouts/          # base, page, article
 │   │   └── partials/         # seo-head, json-ld, contact, experience
-│   ├── _redirects            # Generated — legacy /articles/{id} → canonical URL
+│   ├── _redirects            # Generated: legacy /articles/{id} → canonical URL
 │   ├── articles/             # Blog posts (.md)
 │   ├── css/style.css
 │   ├── about.md              # Static page (markdown)
@@ -32,7 +32,7 @@ Static site built with [Eleventy (11ty)](https://www.11ty.dev/). Hosted free on 
 │   ├── projects.njk          # Active projects
 │   ├── links.njk             # External links
 │   ├── articles.njk          # Blog index at /articles/
-│   ├── feed.xml.njk          # RSS/Atom — articles only
+│   ├── feed.xml.njk          # RSS/Atom (articles only)
 │   ├── sitemap.xml.njk
 │   └── robots.txt.njk
 └── _site/                    # Build output (gitignored)
@@ -40,7 +40,7 @@ Static site built with [Eleventy (11ty)](https://www.11ty.dev/). Hosted free on 
 
 ### Templates (`.njk`)
 
-`.njk` files are [Nunjucks](https://mozilla.github.io/nunjucks/) templates — HTML with variables, loops, and includes. Eleventy uses them for pages that need layout logic (home, work, projects) or generated output (feed, sitemap). Static prose pages can stay plain `.md`; use `.njk` when you want to pull from `site.json` or include partials.
+`.njk` files are [Nunjucks](https://mozilla.github.io/nunjucks/) templates: HTML with variables, loops, and includes. Eleventy uses them for pages that need layout logic (home, work, projects) or generated output (feed, sitemap). Static prose pages can stay plain `.md`; use `.njk` when you want to pull from `site.json` or include partials.
 
 | File type | Use for |
 |-----------|---------|
@@ -87,12 +87,12 @@ Copy `.env.example` to `.env` for local Fathom testing. Production uses Cloudfla
    | Build command | `npm run build` |
    | Build output directory | `_site` |
    | Node version | `22` (Environment variable `NODE_VERSION` or use `.nvmrc`) |
-   | Environment variable | `FATHOM_SITE_ID` — your Fathom site ID (production analytics) |
-   | Environment variable | `NODE_ENV=production` — enables Fathom script in HTML |
+   | Environment variable | `FATHOM_SITE_ID`: your Fathom site ID (production analytics) |
+   | Environment variable | `NODE_ENV=production`: enables Fathom script in HTML |
 
 4. Add custom domain **`onerinas.com`** under **Custom domains** (and `www` if you use it).
 
-5. **Redirect old subdomain** — Cloudflare → **Rules** → **Redirect Rules**:
+5. **Redirect old subdomain** (Cloudflare → **Rules** → **Redirect Rules**):
 
    - **When:** Hostname equals `blog.onerinas.com`
    - **Then:** Dynamic redirect to `concat("https://onerinas.com", http.request.uri.path)` with status **301**, preserve query string
@@ -103,7 +103,7 @@ Every push to the production branch rebuilds and deploys. Preview URLs on PRs ar
 
 ## Adding a static page
 
-**Markdown** — create a file in `src/`:
+**Markdown:** create a file in `src/`:
 
 ```markdown
 ---
@@ -115,13 +115,13 @@ description: Short summary for SEO.
 Page content here.
 ```
 
-**Nunjucks** — for pages that loop over data or include partials, create `src/uses.njk` instead (see `projects.njk` or `work.njk`).
+**Nunjucks:** for pages that loop over data or include partials, create `src/uses.njk` instead (see `projects.njk` or `work.njk`).
 
 No manifest or redirect entry needed.
 
 ## Adding an article
 
-1. **Add to manifest** — `data/articles.yml`:
+1. **Add to manifest** (`data/articles.yml`):
 
    ```yaml
    - id: 2
@@ -130,7 +130,7 @@ No manifest or redirect entry needed.
      published_at: 2025-06-15
    ```
 
-2. **Create the post** — `src/articles/2-my-new-post.md`:
+2. **Create the post** (`src/articles/2-my-new-post.md`):
 
    ```markdown
    ---
@@ -160,7 +160,7 @@ No manifest or redirect entry needed.
 
 `data/articles.yml` is the source of truth. `scripts/generate-redirects.js` writes `src/_redirects`, which Eleventy copies to `_site/_redirects` for Cloudflare Pages.
 
-Do not hand-edit `src/_redirects` — run `npm run redirects` after changing the manifest.
+Do not hand-edit `src/_redirects`. Run `npm run redirects` after changing the manifest.
 
 ## Bulk migration (later)
 

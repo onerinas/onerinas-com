@@ -2,7 +2,7 @@
 {%- set canonicalUrl = site.url ~ page.url -%}
 
 {%- if isArticle -%}
-  {%- set articleDescription = description or (title ~ " — writing by " ~ site.name ~ ".") -%}
+  {%- set articleDescription = description or (title ~ ", by " ~ site.name ~ ".") -%}
 <script type="application/ld+json">
 {{ {
   "@context": "https://schema.org",

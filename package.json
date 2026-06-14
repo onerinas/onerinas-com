@@ -1,7 +1,7 @@
 {
   "name": "onerinas",
   "private": true,
-  "description": "Personal site and blog — onerinas.com",
+  "description": "Personal site and blog at onerinas.com",
   "scripts": {
     "redirects": "node scripts/generate-redirects.js",
     "import:blog": "node scripts/import-from-blog.js",

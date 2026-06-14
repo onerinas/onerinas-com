@@ -1,0 +1,17 @@
+---
+description: Never use em dashes in copy, templates, or comments
+alwaysApply: true
+---
+
+# No em dashes
+
+Do not use em dashes (`—`, U+2014) anywhere in this repo: site copy, front matter, templates, README, scripts, or comments.
+
+Use instead:
+
+- ` | ` or ` · ` for title or label separators
+- `, ` or `. ` to join clauses
+- `-` (hyphen) for decorative breaks or comment asides
+- `: ` after labels in docs
+
+Before finishing edits, search for `—` and remove any matches.
