@@ -2,6 +2,13 @@
   "name": "onerinas",
   "private": true,
   "description": "Personal site and blog at onerinas.com",
+  "aube": {
+    "allowBuilds": {
+      "esbuild": true,
+      "sharp": true,
+      "workerd": true
+    }
+  },
   "scripts": {
     "redirects": "node scripts/generate-redirects.js",
     "import:blog": "node scripts/import-from-blog.js",

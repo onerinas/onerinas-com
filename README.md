@@ -10,6 +10,8 @@ Static site built with [Eleventy (11ty)](https://www.11ty.dev/). Hosted on [Clou
 
 ```
 .
+├── mise.toml                 # Node 22 + aube (mise-en-place)
+├── wrangler.jsonc            # Cloudflare Workers static assets config
 ├── .eleventy.js              # Eleventy config
 ├── data/
 │   ├── articles.yml          # Article manifest (id, slug, title, published_at)
@@ -17,6 +19,8 @@ Static site built with [Eleventy (11ty)](https://www.11ty.dev/). Hosted on [Clou
 ├── scripts/
 │   ├── generate-redirects.js # Builds src/_redirects from manifest
 │   ├── generate-og-images.js # Builds _site/og/*.png at end of build
+│   ├── cloudflare-build.sh   # Cloudflare CI build (mise + aube)
+│   ├── cloudflare-deploy.sh  # Cloudflare deploy step
 │   └── import-from-blog.js   # Scrape blog.onerinas.com (one-time migration)
 ├── src/
 │   ├── _data/site.json       # Site name, URL, description, projects
@@ -57,23 +61,27 @@ Static site built with [Eleventy (11ty)](https://www.11ty.dev/). Hosted on [Clou
 
 ## Local development
 
-Requires Node.js 20+ (see `.nvmrc`).
+Requires [mise](https://mise.jdx.dev/) (2026.4.18+) with Node 22 and aube pinned in `mise.toml`.
 
 ```bash
-npm install
-npm run dev
+mise trust
+mise install
+aube install
+aube run dev
 ```
+
+Or use mise tasks: `mise run dev`, `mise run build`, `mise run deploy`.
 
 Open http://localhost:8080 (Eleventy’s default port).
 
 Production build (redirects → Eleventy → Open Graph images):
 
 ```bash
-npm run build
+aube run build
 # Output in _site/ (includes _site/og/*.png for social previews)
 ```
 
-Copy `.env.example` to `.env` for local Fathom testing. Production uses Cloudflare env vars (see deploy section).
+Copy `.env.example` to `.env` for local Fathom testing. Production uses Cloudflare **Build** variables (see deploy section).
 
 ## Cloudflare deploy
 
@@ -83,18 +91,19 @@ Copy `.env.example` to `.env` for local Fathom testing. Production uses Cloudfla
 
    | Setting | Value |
    |---------|--------|
-   | Build command | `npm run build` |
-   | Deploy command | `npx wrangler deploy` |
+   | Build command | `bash scripts/cloudflare-build.sh` |
+   | Deploy command | `bash scripts/cloudflare-deploy.sh` |
 
-   Static assets are configured in `wrangler.jsonc` (`./_site` after build).
+   Static assets are configured in `wrangler.jsonc` (`./_site` after build). Scripts install mise + aube if missing, then run `aube install` and `aube run build`.
 
-4. Environment variables (Production):
+4. **Build variables** (Settings → **Build**, not runtime Variables and Secrets):
 
    | Variable | Value |
    |----------|--------|
-   | `NODE_VERSION` | `22` |
    | `NODE_ENV` | `production` |
    | `FATHOM_SITE_ID` | your Fathom site ID |
+
+   `NODE_VERSION` is not needed; `mise.toml` pins Node 22.
 
 5. Add custom domain **`onerinas.com`** under **Custom domains**.
 
@@ -107,7 +116,7 @@ Copy `.env.example` to `.env` for local Fathom testing. Production uses Cloudfla
 
 Every push to the production branch rebuilds and deploys. Preview URLs on PRs are included.
 
-Local deploy: `npm run deploy` (build + `wrangler deploy`).
+Local deploy: `mise run deploy` or `aube run deploy`.
 
 ## Adding a static page
 
@@ -157,7 +166,7 @@ No manifest or redirect entry needed.
 3. **Regenerate redirects** (also runs on build):
 
    ```bash
-   npm run redirects
+   aube run redirects
    ```
 
    This appends `/articles/2 /articles/2-my-new-post/ 301` to `src/_redirects`.
@@ -168,7 +177,7 @@ No manifest or redirect entry needed.
 
 `data/articles.yml` is the source of truth. `scripts/generate-redirects.js` writes `src/_redirects`, which Eleventy copies to `_site/_redirects` for Cloudflare.
 
-Do not hand-edit `src/_redirects`. Run `npm run redirects` after changing the manifest.
+Do not hand-edit `src/_redirects`. Run `aube run redirects` after changing the manifest.
 
 ## Bulk migration (later)
 
@@ -176,14 +185,14 @@ When you export from Feedbackface / OneSimpleBlog (`id`, `slug`, `title`, `body`
 
 1. Append rows to `data/articles.yml`.
 2. Add markdown files under `src/articles/` (or extend the script to scaffold them).
-3. Run `npm run redirects && npm run build`.
+3. Run `aube run redirects && aube run build`.
 
 **Already migrated:** all 69 posts from `blog.onerinas.com` were imported with:
 
 ```bash
-npm run import:blog   # scrapes live site → src/articles/ + data/articles.yml
-npm run redirects
-npm run build
+aube run import:blog   # scrapes live site → src/articles/ + data/articles.yml
+aube run redirects
+aube run build
 ```
 
 Re-run `import:blog` only if you need to refresh from the live site (overwrites articles).
