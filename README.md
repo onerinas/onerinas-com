@@ -103,10 +103,9 @@ Same pattern as [paperstickio/website](https://github.com/paperstickio/website):
 
    | Variable | Value |
    |----------|--------|
-   | `NODE_ENV` | `production` |
-   | `FATHOM_SITE_ID` | your Fathom site ID |
+   | `FATHOM_SITE_ID` | your Fathom site ID (from [Fathom](https://usefathom.com) → Settings → Sites) |
 
-   Build variables are build-time only, not runtime Worker variables.
+   Fathom is baked into HTML at build time. If this variable is missing, no analytics script is included. Use **Build** variables, not runtime Worker variables.
 
 4. Add custom domain **`onerinas.com`** under **Custom domains**.
 

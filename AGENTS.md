@@ -22,4 +22,4 @@
 - Contact email: `hello@onerinas.com`; active projects: Paperstick (`paperstick.app`) and HiFive (`tryhifive.com`).
 - Blog migrated from Feedbackface / OneSimpleBlog; use root-relative URLs throughout.
 - Use `.md` for articles and simple pages; `.njk` when pulling from `site.json` or needing loops/includes.
-- Fathom loads only when `NODE_ENV=production` and `FATHOM_SITE_ID` is set.
+- Fathom loads when `FATHOM_SITE_ID` is set as a Cloudflare **Build** variable (baked in at build time).

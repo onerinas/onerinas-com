@@ -33,11 +33,11 @@
   </main>
 
   <footer class="site-footer">
-    <div class="container footer-inner">
+    <div class="container">
       <p class="footer-copy">&copy; {{ currentYear }} {{ site.name }}</p>
     </div>
   </footer>
-  {%- if env.isProd and env.fathomSiteId %}
+  {%- if env.fathomSiteId %}
   <script src="https://cdn.usefathom.com/script.js" data-site="{{ env.fathomSiteId }}" defer></script>
   {%- endif %}
 </body>
