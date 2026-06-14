@@ -70,6 +70,15 @@ module.exports = function (eleventyConfig) {
 
   eleventyConfig.addFilter("toJson", (value) => JSON.stringify(value));
 
+  eleventyConfig.addFilter("ogImagePath", (url) => {
+    if (url === "/") {
+      return "/og/home.png";
+    }
+
+    const slug = url.replace(/^\/|\/$/g, "");
+    return `/og/${slug}.png`;
+  });
+
   return {
     dir: {
       input: "src",

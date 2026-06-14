@@ -22,10 +22,8 @@
 {%- else -%}
   {%- set ogType = "website" -%}
 {%- endif -%}
-{%- set ogImage = socialImage or site.socialImage -%}
-{%- if ogImage -%}
-  {%- set ogImageUrl = site.url ~ ogImage -%}
-{%- endif -%}
+{%- set ogImage = page.url | ogImagePath -%}
+{%- set ogImageUrl = site.url ~ ogImage -%}
 
 <title>{{ seoTitle }}</title>
 <meta name="description" content="{{ seoDescription }}">
