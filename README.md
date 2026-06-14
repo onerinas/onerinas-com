@@ -20,8 +20,6 @@ Static site built with [Eleventy (11ty)](https://www.11ty.dev/). Hosted on [Clou
 ├── scripts/
 │   ├── generate-redirects.js # Builds src/_redirects from manifest
 │   ├── generate-og-images.js # Builds _site/og/*.png at end of build
-│   ├── cloudflare-build.sh   # Cloudflare CI build (mise + aube)
-│   ├── cloudflare-deploy.sh  # Cloudflare deploy step
 │   └── import-from-blog.js   # Scrape blog.onerinas.com (one-time migration)
 ├── src/
 │   ├── _data/site.json       # Site name, URL, description, projects
@@ -88,29 +86,40 @@ Copy `.env.example` to `.env` for local Fathom testing. Production uses Cloudfla
 
 ## Cloudflare deploy
 
+Same pattern as [paperstickio/website](https://github.com/paperstickio/website): **`wrangler.jsonc` is the config**, deploy with **`npx wrangler deploy`**. The difference is this site has a build step (Eleventy → `_site/`), so `wrangler.jsonc` defines `build.command`.
+
 1. Push this repo to GitHub.
-2. Cloudflare dashboard → **Workers & Pages** → **Create application** → connect repo **`onerinas/onerinas-com`**.
+2. Cloudflare dashboard → **Workers & Pages** → connect repo **`onerinas/onerinas-com`**.
 3. Build settings:
 
    | Setting | Value |
    |---------|--------|
-   | Build command | `bash scripts/cloudflare-build.sh` |
-   | Deploy command | `bash scripts/cloudflare-deploy.sh` |
+   | Build command | see below |
+   | Deploy command | `npx wrangler deploy` |
 
-   Static assets are configured in `wrangler.jsonc` (`./_site` after build). Scripts install mise + aube if missing, then run `aube install` and `aube run build`.
+   Cloudflare does **not** include mise, and it auto-runs `bun install` (or npm) before your build command unless you skip that. For aube + `mise.toml`, use:
 
-4. **Build variables** (Settings → **Build**, not runtime Variables and Secrets):
+   **Build command:**
+
+   ```bash
+   curl -fsSL https://mise.run | sh && export PATH="$HOME/.local/bin:$PATH" && eval "$(mise activate bash --shims)" && mise install && aube ci
+   ```
+
+   **Build variables** (Settings → Build → Build variables):
 
    | Variable | Value |
    |----------|--------|
+   | `SKIP_DEPENDENCY_INSTALL` | `true` |
    | `NODE_ENV` | `production` |
    | `FATHOM_SITE_ID` | your Fathom site ID |
 
-   `NODE_VERSION` is not needed; `mise.toml` pins Node 22.
+   `SKIP_DEPENDENCY_INSTALL` stops Cloudflare from running `bun install` / `npm install` before your command (which would ignore `aube-lock.yaml`). mise then installs Node 22 + aube from `mise.toml`, and `aube ci` installs deps from the lockfile. `npx wrangler deploy` runs `build.command` from `wrangler.jsonc`, then uploads `_site/`.
 
-5. Add custom domain **`onerinas.com`** under **Custom domains**.
+   Do **not** set `NODE_VERSION` unless you want to override mise; `mise.toml` pins Node 22. Build variables are build-time only, not runtime Worker variables.
 
-6. **Redirect old subdomain** (Cloudflare → **Rules** → **Redirect Rules**):
+4. Add custom domain **`onerinas.com`** under **Custom domains**.
+
+5. **Redirect old subdomain** (Cloudflare → **Rules** → **Redirect Rules**):
 
    - **When:** Hostname equals `blog.onerinas.com`
    - **Then:** Dynamic redirect to `concat("https://onerinas.com", http.request.uri.path)` with status **301**, preserve query string
@@ -119,7 +128,7 @@ Copy `.env.example` to `.env` for local Fathom testing. Production uses Cloudfla
 
 Every push to the production branch rebuilds and deploys. Preview URLs on PRs are included.
 
-Local deploy: `mise run deploy` or `aube run deploy`.
+Local deploy: `aube ci && mise run deploy` (or `npx wrangler deploy` after deps are installed).
 
 ## Adding a static page
 

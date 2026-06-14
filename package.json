@@ -16,7 +16,7 @@
     "assign:topics": "node scripts/assign-topics.js",
     "og": "node scripts/generate-og-images.js",
     "build": "npm run redirects && npx @11ty/eleventy && npm run og",
-    "deploy": "npm run build && wrangler deploy",
+    "deploy": "wrangler deploy",
     "dev": "npm run redirects && npx @11ty/eleventy --serve",
     "start": "npm run dev"
   },

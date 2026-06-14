@@ -18,4 +18,4 @@ run = "aube run dev"
 
 [tasks.deploy]
 description = "Build and deploy to Cloudflare"
-run = "aube run deploy"
+run = "aube exec wrangler deploy"
