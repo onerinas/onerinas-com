@@ -1,10 +1,10 @@
 ---
-layout: layouts/base.njk
+layout: layouts/page.njk
 title: About
 permalink: /about/
+fullBleed: true
+description: Husband, father, product engineer — building software from Dubai.
 ---
-# About
-
 *Last updated on 11th Jan, 2026.*
 
 Hello, Rinas here 👋
@@ -13,7 +13,7 @@ This is my personal blog where I write as I navigate through life.
 
 Husband, Father, Software developer. Currently, I am working at [Inline Manual](http://inlinemanual.com/) as a product engineer.
 
-Passion project: [HiFive](https://tryhifive.com/). It's an iOS app but more importantly this is me learning how to improve my health and building tools for it.
+On the side I'm building [Paperstick](https://paperstick.app) — hosted changelogs for release notes — and [HiFive](https://tryhifive.com/) — health challenges with friends.
 
 ## A bit more about myself?
 

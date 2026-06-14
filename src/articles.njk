@@ -5,17 +5,15 @@ permalink: /articles/
 fullBleed: true
 description: Articles and notes on software, indie projects, and life.
 ---
-<section class="section section-page-intro">
+<section class="section page">
   <div class="section-inner">
-    <h1 class="section-heading">Blog</h1>
-    <p class="section-lead">Software, indie projects, and navigating life. <a href="/feed.xml">RSS</a></p>
-  </div>
-</section>
+    <header class="page-header">
+      <h1 class="section-heading">Blog</h1>
+      <p class="section-lead">TIL posts and notes on software, indie projects, and life. <a href="/feed.xml">RSS</a></p>
+    </header>
 
-<section class="section section-posts">
-  <div class="section-inner">
     <div class="article-group">
-      <h2 class="article-group-heading">TIL</h2>
+      <h2 class="subsection-heading">TIL</h2>
       <ul class="article-list">
       {%- for post in collections.articles | byTopic("til") %}
         <li>
@@ -27,7 +25,7 @@ description: Articles and notes on software, indie projects, and life.
     </div>
 
     <div class="article-group">
-      <h2 class="article-group-heading">Notes</h2>
+      <h2 class="subsection-heading">Notes</h2>
       <ul class="article-list">
       {%- for post in collections.articles | byTopic("notes") %}
         <li>

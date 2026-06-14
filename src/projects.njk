@@ -1,0 +1,17 @@
+---
+layout: layouts/page.njk
+title: Projects
+permalink: /projects/
+fullBleed: true
+description: Paperstick and HiFive — what I'm building now.
+---
+<p>Two active side projects right now:</p>
+
+<div class="links-grid">
+{%- for project in site.projects %}
+  <a class="link-card" href="{{ project.url }}" rel="noopener noreferrer">
+    <span class="link-label">{{ project.name }}</span>
+    <span class="link-value">{{ project.description }}</span>
+  </a>
+{%- endfor %}
+</div>

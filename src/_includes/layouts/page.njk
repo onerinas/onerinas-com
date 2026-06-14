@@ -1,0 +1,17 @@
+---
+layout: layouts/base.njk
+fullBleed: true
+---
+<section class="section page">
+  <div class="section-inner">
+    <header class="page-header">
+      <h1 class="section-heading">{{ title }}</h1>
+      {%- if description %}
+      <p class="section-lead">{{ description }}</p>
+      {%- endif %}
+    </header>
+    <div class="prose page-content">
+      {{ content | safe }}
+    </div>
+  </div>
+</section>

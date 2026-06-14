@@ -1,31 +1,27 @@
-<section class="section section-gradient">
-  <div class="section-inner">
-    <h2 class="section-heading">Experience</h2>
-    <div class="experience-grid">
-      {%- for job in experience %}
-      <article class="experience-card">
-        <header class="experience-header">
-          <div>
-            <h3 class="experience-title">{{ job.title }}</h3>
-            <p class="experience-company">{{ job.company }}</p>
-            {%- if job.location %}
-            <p class="experience-location">{{ job.location }}</p>
-            {%- endif %}
-          </div>
-          <p class="experience-date">{{ job.date }}</p>
-        </header>
-        {%- if job.highlights %}
-        <ul class="experience-highlights">
-          {%- for item in job.highlights %}
-          <li>{{ item }}</li>
-          {%- endfor %}
-        </ul>
+<h2 class="subsection-heading">Experience</h2>
+<div class="experience-grid">
+  {%- for job in experience %}
+  <article class="experience-card">
+    <header class="experience-header">
+      <div>
+        <h3 class="experience-title">{{ job.title }}</h3>
+        <p class="experience-company">{{ job.company }}</p>
+        {%- if job.location %}
+        <p class="experience-location">{{ job.location }}</p>
         {%- endif %}
-      </article>
+      </div>
+      <p class="experience-date">{{ job.date }}</p>
+    </header>
+    {%- if job.highlights %}
+    <ul class="experience-highlights">
+      {%- for item in job.highlights %}
+      <li>{{ item }}</li>
       {%- endfor %}
-    </div>
-    <p class="section-footer-link">
-      <a class="btn btn-pill" href="{{ site.linkedin }}" rel="noopener noreferrer">View full experience on LinkedIn →</a>
-    </p>
-  </div>
-</section>
+    </ul>
+    {%- endif %}
+  </article>
+  {%- endfor %}
+</div>
+<p class="section-footer-link">
+  <a class="btn btn-pill" href="{{ site.linkedin }}" rel="noopener noreferrer">View full experience on LinkedIn →</a>
+</p>

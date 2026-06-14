@@ -1,17 +1,19 @@
 ---
 layout: layouts/base.njk
+fullBleed: true
 ---
-<article class="article">
-  <header class="article-header">
-    <h1>{{ title }}</h1>
-    <p class="meta">
-      {%- if topic %}
-      <span class="topic-badge">{{ topic | topicLabel }}</span>
-      {%- endif %}
-      <time datetime="{{ date | isoDate }}">{{ date | readableDate }}</time>
-    </p>
-  </header>
-  <div class="article-body">
-    {{ content | safe }}
+<section class="section page">
+  <div class="section-inner">
+    <article class="article">
+      <header class="article-header">
+        <h1 class="section-heading">{{ title }}</h1>
+        <p class="meta">
+          <time datetime="{{ date | isoDate }}">{{ date | readableDate }}</time>
+        </p>
+      </header>
+      <div class="article-body prose">
+        {{ content | safe }}
+      </div>
+    </article>
   </div>
-</article>
+</section>
