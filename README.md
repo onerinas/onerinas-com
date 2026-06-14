@@ -86,7 +86,7 @@ Copy `.env.example` to `.env` for local Fathom testing. Production uses Cloudfla
 
 ## Cloudflare deploy
 
-Same pattern as [paperstickio/website](https://github.com/paperstickio/website): **`wrangler.jsonc` is the config**, deploy with **`npx wrangler deploy`**. This site has a build step (Eleventy → `_site/`).
+Same pattern as [paperstickio/website](https://github.com/paperstickio/website): **`wrangler.jsonc` is the config**, deploy with **`npx wrangler deploy`**. Build runs in the Cloudflare build command (`npm run build`), not in wrangler config.
 
 1. Push this repo to GitHub.
 2. Cloudflare dashboard → **Workers & Pages** → connect repo **`onerinas/onerinas-com`**.
@@ -95,9 +95,9 @@ Same pattern as [paperstickio/website](https://github.com/paperstickio/website):
    | Setting | Value |
    |---------|--------|
    | Build command | `npm run build` |
-   | Deploy command | `npx wrangler deploy --no-build` |
+   | Deploy command | `npx wrangler deploy` |
 
-   Cloudflare auto-installs deps from `package-lock.json` before the build command. **`npm run build` must be in the build command** because Cloudflare Workers Builds does not run `build.command` from `wrangler.jsonc`. The deploy step uploads `_site/`.
+   Cloudflare auto-installs deps from `package-lock.json`, then `npm run build` generates `_site/`. `npx wrangler deploy` uploads it. (`--no-build` is not a valid wrangler 4 flag.)
 
    **Build variables** (Settings → Build → Build variables):
 
@@ -119,7 +119,7 @@ Same pattern as [paperstickio/website](https://github.com/paperstickio/website):
 
 Every push to the production branch rebuilds and deploys. Preview URLs on PRs are included.
 
-Local deploy: `npm ci && npm run build && npx wrangler deploy --no-build`.
+Local deploy: `npm run build && npx wrangler deploy`.
 
 ## Adding a static page
 

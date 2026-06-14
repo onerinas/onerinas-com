@@ -14,4 +14,4 @@ run = "npm run dev"
 
 [tasks.deploy]
 description = "Build and deploy to Cloudflare"
-run = "npx wrangler deploy"
+run = "npm run build && npx wrangler deploy"
