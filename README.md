@@ -95,14 +95,20 @@ Same pattern as [paperstickio/website](https://github.com/paperstickio/website):
    | Setting | Value |
    |---------|--------|
    | Build command | see below |
-   | Deploy command | `npx wrangler deploy` |
+   | Deploy command | `npx wrangler deploy --no-build` |
 
    Cloudflare does **not** include mise, and it auto-runs `bun install` (or npm) before your build command unless you skip that. For aube + `mise.toml`, use:
 
    **Build command:**
 
    ```bash
-   curl -fsSL https://mise.run | sh && export PATH="$HOME/.local/bin:$PATH" && eval "$(mise activate bash --shims)" && mise install && aube ci
+   curl -fsSL https://mise.run | sh && export PATH="$HOME/.local/bin:$PATH" && eval "$(mise activate bash --shims)" && mise install && aube ci && aube run build
+   ```
+
+   **Deploy command:**
+
+   ```bash
+   npx wrangler deploy --no-build
    ```
 
    **Build variables** (Settings → Build → Build variables):
@@ -113,7 +119,7 @@ Same pattern as [paperstickio/website](https://github.com/paperstickio/website):
    | `NODE_ENV` | `production` |
    | `FATHOM_SITE_ID` | your Fathom site ID |
 
-   `SKIP_DEPENDENCY_INSTALL` stops Cloudflare from running `bun install` / `npm install` before your command (which would ignore `aube-lock.yaml`). mise then installs Node 22 + aube from `mise.toml`, and `aube ci` installs deps from the lockfile. `npx wrangler deploy` runs `build.command` from `wrangler.jsonc`, then uploads `_site/`.
+   `SKIP_DEPENDENCY_INSTALL` stops Cloudflare from running `bun install` / `npm install` before your command (which would ignore `aube-lock.yaml`). mise installs Node 22 + aube, `aube ci` installs deps, and **`aube run build` must run in the build command** because Cloudflare Workers Builds does not run `build.command` from `wrangler.jsonc`. The deploy step uploads the `_site/` output. Locally, `wrangler.jsonc` `build.command` still runs on `wrangler deploy`.
 
    Do **not** set `NODE_VERSION` unless you want to override mise; `mise.toml` pins Node 22. Build variables are build-time only, not runtime Worker variables.
 
