@@ -166,6 +166,17 @@ main {
   margin: 1.5rem 0 0;
 }
 
+.not-found-report {
+  margin: 2rem 0 0;
+  color: var(--text-light);
+  font-size: 0.9375rem;
+}
+
+.not-found-report a {
+  font-weight: 500;
+  color: var(--secondary);
+}
+
 .page-full-bleed main {
   padding-bottom: 0;
 }

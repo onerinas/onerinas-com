@@ -1,13 +1,27 @@
 ---
 layout: layouts/page.njk
 title: Page not found
-description: That page does not exist or was moved.
+description: This page is not here. Head home or say hi if a link looks wrong.
 permalink: 404.html
 fullBleed: true
 eleventyExcludeFromCollections: true
 ---
-<p>Nothing lives at this URL. The link might be old, or the page was removed.</p>
+<p>Sorry, this page is not here. The link might be old, or I may have moved things around.</p>
 <p class="not-found-actions">
   <a class="btn btn-pill" href="/">Home</a>
   <a class="btn btn-pill" href="/articles/">All articles</a>
 </p>
+<p class="not-found-report">If you expected something at this address, <a id="report-broken-link" href="mailto:{{ site.email }}">send me a quick note</a>. I will take a look.</p>
+<script>
+  (function () {
+    var link = document.getElementById("report-broken-link");
+    if (!link) return;
+    var subject = encodeURIComponent("Heads up: a link on onerinas.com");
+    var body = encodeURIComponent(
+      "Hi Rinas,\n\nI tried to open this page but got a 404:\n\n" +
+        window.location.href +
+        "\n\nThought you might want to know.\n"
+    );
+    link.href = "mailto:{{ site.email }}?subject=" + subject + "&body=" + body;
+  })();
+</script>
