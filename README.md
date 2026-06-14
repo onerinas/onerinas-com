@@ -2,7 +2,9 @@
 
 Static site built with [Eleventy (11ty)](https://www.11ty.dev/). Hosted free on [Cloudflare Pages](https://pages.cloudflare.com/).
 
-**Domain:** `blog.onerinas.com` — all URLs are root-relative (`/about/`, `/articles/…`) so moving to `onerinas.com` later is DNS + redirects only.
+**Domain:** `onerinas.com` — canonical URLs use `site.json` → `url`. All paths are root-relative (`/about/`, `/articles/…`).
+
+**Legacy subdomain:** `blog.onerinas.com` should 301 to `onerinas.com` via a Cloudflare Redirect Rule (see deploy section).
 
 ## Structure
 
@@ -88,7 +90,14 @@ Copy `.env.example` to `.env` for local Fathom testing. Production uses Cloudfla
    | Environment variable | `FATHOM_SITE_ID` — your Fathom site ID (production analytics) |
    | Environment variable | `NODE_ENV=production` — enables Fathom script in HTML |
 
-4. Add custom domain `blog.onerinas.com` under **Custom domains**.
+4. Add custom domain **`onerinas.com`** under **Custom domains** (and `www` if you use it).
+
+5. **Redirect old subdomain** — Cloudflare → **Rules** → **Redirect Rules**:
+
+   - **When:** Hostname equals `blog.onerinas.com`
+   - **Then:** Dynamic redirect to `concat("https://onerinas.com", http.request.uri.path)` with status **301**, preserve query string
+
+   Short article URLs (`/articles/1`) redirect to canonical slugs via `src/_redirects` on Pages.
 
 Every push to the production branch rebuilds and deploys. Preview URLs on PRs are included.
 

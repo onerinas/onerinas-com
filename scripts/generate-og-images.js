@@ -112,7 +112,11 @@ async function loadFonts() {
   return fontsPromise;
 }
 
-function ogMarkup({ title, description, siteName }) {
+function siteHostname(site) {
+  return new URL(site.url).hostname;
+}
+
+function ogMarkup({ title, description, siteName, hostname }) {
   return {
     type: "div",
     props: {
@@ -189,7 +193,7 @@ function ogMarkup({ title, description, siteName }) {
               fontSize: 24,
               color: "#999999",
             },
-            children: "blog.onerinas.com",
+            children: hostname,
           },
         },
       ],
@@ -204,6 +208,7 @@ async function renderOgImage(page, site) {
       title: pageTitle(page, site),
       description: pageDescription(page, site),
       siteName: site.name,
+      hostname: siteHostname(site),
     }),
     {
       width: 1200,
