@@ -10,7 +10,7 @@ Static site built with [Eleventy (11ty)](https://www.11ty.dev/). Hosted on [Clou
 
 ```
 .
-├── mise.toml                 # Node 22 + aube (mise-en-place)
+├── .mise/config.toml         # Node 22 + aube (local/CI only; not repo root — Cloudflare auto-runs mise if mise.toml is at root)
 ├── aube-lock.yaml            # Dependency lockfile (aube native)
 ├── wrangler.jsonc            # Cloudflare Workers static assets config
 ├── .eleventy.js              # Eleventy config
@@ -60,7 +60,7 @@ Static site built with [Eleventy (11ty)](https://www.11ty.dev/). Hosted on [Clou
 
 ## Local development
 
-Requires [mise](https://mise.jdx.dev/) (2026.4.18+) with Node 22 and aube pinned in `mise.toml`.
+Requires [mise](https://mise.jdx.dev/) (2026.4.18+) with Node 22 and aube pinned in `.mise/config.toml`.
 
 ```bash
 mise trust
@@ -97,12 +97,12 @@ Same pattern as [paperstickio/website](https://github.com/paperstickio/website):
    | Build command | see below |
    | Deploy command | `npx wrangler deploy --no-build` |
 
-   Cloudflare does **not** include mise, and it auto-runs `bun install` (or npm) before your build command unless you skip that. For aube + `mise.toml`, use:
+   Cloudflare includes Node 22 but not mise or aube. Set `SKIP_DEPENDENCY_INSTALL=true` so Cloudflare does not run `bun install` before your command (which would ignore `aube-lock.yaml`).
 
    **Build command:**
 
    ```bash
-   curl -fsSL https://mise.run | sh && export PATH="$HOME/.local/bin:$PATH" && eval "$(mise activate bash --shims)" && mise install && aube ci && aube run build
+   npm install -g @jdx/aube --ignore-scripts=false && aube ci && aube run build
    ```
 
    **Deploy command:**
@@ -119,9 +119,9 @@ Same pattern as [paperstickio/website](https://github.com/paperstickio/website):
    | `NODE_ENV` | `production` |
    | `FATHOM_SITE_ID` | your Fathom site ID |
 
-   `SKIP_DEPENDENCY_INSTALL` stops Cloudflare from running `bun install` / `npm install` before your command (which would ignore `aube-lock.yaml`). mise installs Node 22 + aube, `aube ci` installs deps, and **`aube run build` must run in the build command** because Cloudflare Workers Builds does not run `build.command` from `wrangler.jsonc`. The deploy step uploads the `_site/` output. Locally, `wrangler.jsonc` `build.command` still runs on `wrangler deploy`.
+   `aube ci` installs deps from the lockfile. **`aube run build` must run in the build command** because Cloudflare Workers Builds does not run `build.command` from `wrangler.jsonc`. The deploy step uploads `_site/`. Use mise locally for dev (`.mise/config.toml`); do not put `mise.toml` at the repo root or Cloudflare will auto-run `mise install` and fail on unrelated tools (Hugo, Ruby, etc.).
 
-   Do **not** set `NODE_VERSION` unless you want to override mise; `mise.toml` pins Node 22. Build variables are build-time only, not runtime Worker variables.
+   Do **not** set `NODE_VERSION` unless needed; Cloudflare defaults to Node 22. Build variables are build-time only, not runtime Worker variables.
 
 4. Add custom domain **`onerinas.com`** under **Custom domains**.
 

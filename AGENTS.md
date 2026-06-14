@@ -17,7 +17,7 @@
 - GitHub: `onerinas/onerinas-com`; canonical site URL `https://onerinas.com`.
 - Hosted on Cloudflare Pages; legacy `blog.onerinas.com` should 301 to apex via Cloudflare Redirect Rule.
 - Build: `aube run build` (or `mise run build`) runs redirects, Eleventy, then Open Graph image generation.
-- Tooling: Node 22 + aube via `mise.toml`; lockfile is `aube-lock.yaml`.
+- Tooling: Node 22 + aube via `.mise/config.toml`; lockfile is `aube-lock.yaml`.
 - `data/articles.yml` is source of truth; `scripts/generate-redirects.js` writes legacy `/articles/{id}` to `/articles/{id}-{slug}/` rules.
 - Contact email: `hello@onerinas.com`; active projects: Paperstick (`paperstick.app`) and HiFive (`tryhifive.com`).
 - Blog migrated from Feedbackface / OneSimpleBlog; use root-relative URLs throughout.
