@@ -1,0 +1,56 @@
+{%- set isArticle = tags is defined and "articles" in tags -%}
+{%- set isHome = page.url == "/" -%}
+
+{%- if title and not isHome -%}
+  {%- set seoTitle = title ~ " · " ~ site.name -%}
+{%- else -%}
+  {%- set seoTitle = site.name ~ " — " ~ site.description -%}
+{%- endif -%}
+
+{%- if description -%}
+  {%- set seoDescription = description -%}
+{%- elif isArticle -%}
+  {%- set seoDescription = title ~ " — writing by " ~ site.name ~ "." -%}
+{%- else -%}
+  {%- set seoDescription = site.description -%}
+{%- endif -%}
+{%- set seoDescription = seoDescription | seoDescription -%}
+
+{%- set canonicalUrl = site.url ~ page.url -%}
+{%- if isArticle -%}
+  {%- set ogType = "article" -%}
+{%- else -%}
+  {%- set ogType = "website" -%}
+{%- endif -%}
+{%- set ogImage = socialImage or site.socialImage -%}
+{%- if ogImage -%}
+  {%- set ogImageUrl = site.url ~ ogImage -%}
+{%- endif -%}
+
+<title>{{ seoTitle }}</title>
+<meta name="description" content="{{ seoDescription }}">
+<meta name="author" content="{{ site.author }}">
+<link rel="canonical" href="{{ canonicalUrl }}">
+
+<meta property="og:site_name" content="{{ site.name }}">
+<meta property="og:title" content="{{ seoTitle }}">
+<meta property="og:description" content="{{ seoDescription }}">
+<meta property="og:url" content="{{ canonicalUrl }}">
+<meta property="og:type" content="{{ ogType }}">
+<meta property="og:locale" content="{{ site.locale }}">
+{%- if ogImageUrl %}
+<meta property="og:image" content="{{ ogImageUrl }}">
+{%- endif %}
+{%- if isArticle %}
+<meta property="article:published_time" content="{{ date | isoDate }}">
+<meta property="article:author" content="{{ site.author }}">
+{%- endif %}
+
+<meta name="twitter:card" content="{% if ogImageUrl %}summary_large_image{% else %}summary{% endif %}">
+<meta name="twitter:site" content="{{ site.twitterHandle }}">
+<meta name="twitter:creator" content="{{ site.twitterHandle }}">
+<meta name="twitter:title" content="{{ seoTitle }}">
+<meta name="twitter:description" content="{{ seoDescription }}">
+{%- if ogImageUrl %}
+<meta name="twitter:image" content="{{ ogImageUrl }}">
+{%- endif %}

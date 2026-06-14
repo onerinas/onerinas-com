@@ -1,8 +1,11 @@
 {
   "name": "Rinas",
+  "author": "Rinas",
   "url": "https://blog.onerinas.com",
-  "description": "Product Engineer. A generalist who loves building apps.",
-  "tagline": "Product Engineer. A generalist who loves building apps.",
+  "description": "A generalist who loves building apps.",
+  "tagline": "A generalist who loves building apps.",
+  "locale": "en_US",
+  "twitterHandle": "@onerinas",
   "location": "Dubai, United Arab Emirates",
   "email": "hello@onerinas.com",
   "calendly": "https://calendly.com/rinas",
@@ -11,6 +14,18 @@
   "twitter": "https://x.com/onerinas",
   "wip": "https://wip.co/@onerinas",
   "newsletter": "https://buttondown.com/onerinas",
+  "projects": [
+    {
+      "name": "Paperstick",
+      "url": "https://paperstick.app",
+      "description": "Hosted changelog for release notes and product updates"
+    },
+    {
+      "name": "HiFive",
+      "url": "https://tryhifive.com",
+      "description": "Health challenges and daily habits with friends"
+    }
+  ],
   "techStack": [
     "Ruby on Rails",
     "Product Development",

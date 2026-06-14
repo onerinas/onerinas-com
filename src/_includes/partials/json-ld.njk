@@ -1,0 +1,85 @@
+{%- set isArticle = tags is defined and "articles" in tags -%}
+{%- set canonicalUrl = site.url ~ page.url -%}
+
+{%- if isArticle -%}
+  {%- set articleDescription = description or (title ~ " — writing by " ~ site.name ~ ".") -%}
+<script type="application/ld+json">
+{{ {
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": title,
+  "description": articleDescription,
+  "datePublished": date | isoDate,
+  "dateModified": date | isoDate,
+  "author": {
+    "@type": "Person",
+    "name": site.author,
+    "url": site.url
+  },
+  "publisher": {
+    "@type": "Person",
+    "name": site.author
+  },
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": canonicalUrl
+  },
+  "url": canonicalUrl,
+  "inLanguage": "en"
+} | toJson | safe }}
+</script>
+{%- elif page.url == "/" -%}
+<script type="application/ld+json">
+{{ {
+  "@context": "https://schema.org",
+  "@type": "WebSite",
+  "name": site.name,
+  "description": site.description,
+  "url": site.url,
+  "inLanguage": "en",
+  "author": {
+    "@type": "Person",
+    "name": site.author,
+    "url": site.url
+  }
+} | toJson | safe }}
+</script>
+<script type="application/ld+json">
+{{ {
+  "@context": "https://schema.org",
+  "@type": "Person",
+  "name": site.author,
+  "url": site.url,
+  "email": site.email,
+  "jobTitle": "Product Engineer",
+  "address": {
+    "@type": "PostalAddress",
+    "addressLocality": "Dubai",
+    "addressCountry": "AE"
+  },
+  "sameAs": [
+    site.linkedin,
+    site.github,
+    site.twitter,
+    site.wip,
+    site.newsletter
+  ]
+} | toJson | safe }}
+</script>
+{%- elif title -%}
+<script type="application/ld+json">
+{{ {
+  "@context": "https://schema.org",
+  "@type": "WebPage",
+  "name": title,
+  "description": description or site.description,
+  "url": canonicalUrl,
+  "isPartOf": {
+    "@type": "WebSite",
+    "name": site.name,
+    "url": site.url
+  },
+  "inLanguage": "en"
+} | toJson | safe }}
+</script>
+{%- endif -%}
