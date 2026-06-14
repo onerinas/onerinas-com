@@ -2,7 +2,7 @@
 
 Static site built with [Eleventy (11ty)](https://www.11ty.dev/). Hosted free on [Cloudflare Pages](https://pages.cloudflare.com/).
 
-**Domain (planned):** `blog.onerinas.com` — all URLs are root-relative (`/about/`, `/articles/…`) so moving to `onerinas.com` later is DNS + redirects only.
+**Domain:** `blog.onerinas.com` — all URLs are root-relative (`/about/`, `/articles/…`) so moving to `onerinas.com` later is DNS + redirects only.
 
 ## Structure
 
@@ -10,23 +10,40 @@ Static site built with [Eleventy (11ty)](https://www.11ty.dev/). Hosted free on 
 .
 ├── .eleventy.js              # Eleventy config
 ├── data/
-│   └── articles.yml          # Article manifest (id, slug, title, published_at)
+│   ├── articles.yml          # Article manifest (id, slug, title, published_at)
+│   └── article-images.yml    # Image mapping for posts
 ├── scripts/
 │   ├── generate-redirects.js # Builds src/_redirects from manifest
+│   ├── generate-og-images.js # Builds _site/og/*.png at end of build
 │   └── import-from-blog.js   # Scrape blog.onerinas.com (one-time migration)
 ├── src/
-│   ├── _data/site.json       # Site name, URL, description
-│   ├── _includes/layouts/    # base + article layouts
+│   ├── _data/site.json       # Site name, URL, description, projects
+│   ├── _includes/
+│   │   ├── layouts/          # base, page, article
+│   │   └── partials/         # seo-head, json-ld, contact, experience
 │   ├── _redirects            # Generated — legacy /articles/{id} → canonical URL
-│   ├── articles/             # Blog posts (markdown)
+│   ├── articles/             # Blog posts (.md)
 │   ├── css/style.css
-│   ├── about.md              # Static page
-│   ├── projects.md           # Static page (stub)
-│   ├── index.njk             # Home
+│   ├── about.md              # Static page (markdown)
+│   ├── index.njk             # Home (writing-first)
+│   ├── work.njk              # Experience
+│   ├── projects.njk          # Active projects
+│   ├── links.njk             # External links
 │   ├── articles.njk          # Blog index at /articles/
-│   └── feed.xml.njk          # RSS/Atom — articles only
+│   ├── feed.xml.njk          # RSS/Atom — articles only
+│   ├── sitemap.xml.njk
+│   └── robots.txt.njk
 └── _site/                    # Build output (gitignored)
 ```
+
+### Templates (`.njk`)
+
+`.njk` files are [Nunjucks](https://mozilla.github.io/nunjucks/) templates — HTML with variables, loops, and includes. Eleventy uses them for pages that need layout logic (home, work, projects) or generated output (feed, sitemap). Static prose pages can stay plain `.md`; use `.njk` when you want to pull from `site.json` or include partials.
+
+| File type | Use for |
+|-----------|---------|
+| `.md` | Articles and simple static pages (About) |
+| `.njk` | Pages with loops/includes, or XML templates |
 
 ## URL conventions
 
@@ -47,12 +64,14 @@ npm run dev
 
 Open http://localhost:8080 (Eleventy’s default port).
 
-Production build:
+Production build (redirects → Eleventy → Open Graph images):
 
 ```bash
 npm run build
-# Output in _site/
+# Output in _site/ (includes _site/og/*.png for social previews)
 ```
+
+Copy `.env.example` to `.env` for local Fathom testing. Production uses Cloudflare env vars (see deploy section).
 
 ## Cloudflare Pages deploy
 
@@ -66,6 +85,8 @@ npm run build
    | Build command | `npm run build` |
    | Build output directory | `_site` |
    | Node version | `22` (Environment variable `NODE_VERSION` or use `.nvmrc`) |
+   | Environment variable | `FATHOM_SITE_ID` — your Fathom site ID (production analytics) |
+   | Environment variable | `NODE_ENV=production` — enables Fathom script in HTML |
 
 4. Add custom domain `blog.onerinas.com` under **Custom domains**.
 
@@ -73,18 +94,19 @@ Every push to the production branch rebuilds and deploys. Preview URLs on PRs ar
 
 ## Adding a static page
 
-Create a markdown file in `src/`:
+**Markdown** — create a file in `src/`:
 
 ```markdown
 ---
-layout: layouts/base.njk
+layout: layouts/page.njk
 title: Uses
 permalink: /uses/
+description: Short summary for SEO.
 ---
-# Uses
-
 Page content here.
 ```
+
+**Nunjucks** — for pages that loop over data or include partials, create `src/uses.njk` instead (see `projects.njk` or `work.njk`).
 
 No manifest or redirect entry needed.
 
@@ -151,14 +173,14 @@ Re-run `import:blog` only if you need to refresh from the live site (overwrites 
 
 ### Article images
 
-Images live in `src/images/articles/` (copied from your R2 export). Mapping is curated in `data/article-images.yml` — run after adding images:
+Images live in `src/images/articles/` (copied from your R2 export). Mapping is curated in `data/article-images.yml`:
 
 ```bash
-npm run images
+node scripts/install-article-images.js
 ```
 
 This picks the highest-quality file when R2 has duplicates (full-size originals vs 1024px resizes). See `data/image-mapping.json` for the audit trail.
 
 ## RSS
 
-Articles-only feed at `/feed.xml`. Linked in the site nav footer and `<head>`.
+Articles-only feed at `/feed.xml`. Linked in `<head>` via `feed.xml.njk`.
