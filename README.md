@@ -1,6 +1,6 @@
 # onerinas: personal site + blog
 
-Static site built with [Eleventy (11ty)](https://www.11ty.dev/). Hosted free on [Cloudflare Pages](https://pages.cloudflare.com/).
+Static site built with [Eleventy (11ty)](https://www.11ty.dev/). Hosted on [Cloudflare Workers](https://developers.cloudflare.com/workers/static-assets/) (static assets).
 
 **Domain:** `onerinas.com`: canonical URLs use `site.json` → `url`. All paths are root-relative (`/about/`, `/articles/…`).
 
@@ -75,31 +75,39 @@ npm run build
 
 Copy `.env.example` to `.env` for local Fathom testing. Production uses Cloudflare env vars (see deploy section).
 
-## Cloudflare Pages deploy
+## Cloudflare deploy
 
-1. Push this repo to GitHub/GitLab.
-2. Cloudflare dashboard → **Workers & Pages** → **Create** → **Pages** → connect repo.
+1. Push this repo to GitHub.
+2. Cloudflare dashboard → **Workers & Pages** → **Create application** → connect repo **`onerinas/onerinas-com`**.
 3. Build settings:
 
    | Setting | Value |
-   |---------|-------|
-   | Framework preset | Eleventy (or None) |
+   |---------|--------|
    | Build command | `npm run build` |
-   | Build output directory | `_site` |
-   | Node version | `22` (Environment variable `NODE_VERSION` or use `.nvmrc`) |
-   | Environment variable | `FATHOM_SITE_ID`: your Fathom site ID (production analytics) |
-   | Environment variable | `NODE_ENV=production`: enables Fathom script in HTML |
+   | Deploy command | `npx wrangler deploy` |
 
-4. Add custom domain **`onerinas.com`** under **Custom domains** (and `www` if you use it).
+   Static assets are configured in `wrangler.jsonc` (`./_site` after build).
 
-5. **Redirect old subdomain** (Cloudflare → **Rules** → **Redirect Rules**):
+4. Environment variables (Production):
+
+   | Variable | Value |
+   |----------|--------|
+   | `NODE_VERSION` | `22` |
+   | `NODE_ENV` | `production` |
+   | `FATHOM_SITE_ID` | your Fathom site ID |
+
+5. Add custom domain **`onerinas.com`** under **Custom domains**.
+
+6. **Redirect old subdomain** (Cloudflare → **Rules** → **Redirect Rules**):
 
    - **When:** Hostname equals `blog.onerinas.com`
    - **Then:** Dynamic redirect to `concat("https://onerinas.com", http.request.uri.path)` with status **301**, preserve query string
 
-   Short article URLs (`/articles/1`) redirect to canonical slugs via `src/_redirects` on Pages.
+   Short article URLs (`/articles/1`) redirect to canonical slugs via `_redirects` in `_site/`.
 
 Every push to the production branch rebuilds and deploys. Preview URLs on PRs are included.
+
+Local deploy: `npm run deploy` (build + `wrangler deploy`).
 
 ## Adding a static page
 
@@ -158,7 +166,7 @@ No manifest or redirect entry needed.
 
 ## Legacy redirects
 
-`data/articles.yml` is the source of truth. `scripts/generate-redirects.js` writes `src/_redirects`, which Eleventy copies to `_site/_redirects` for Cloudflare Pages.
+`data/articles.yml` is the source of truth. `scripts/generate-redirects.js` writes `src/_redirects`, which Eleventy copies to `_site/_redirects` for Cloudflare.
 
 Do not hand-edit `src/_redirects`. Run `npm run redirects` after changing the manifest.
 

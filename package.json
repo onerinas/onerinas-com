@@ -9,6 +9,7 @@
     "assign:topics": "node scripts/assign-topics.js",
     "og": "node scripts/generate-og-images.js",
     "build": "npm run redirects && npx @11ty/eleventy && npm run og",
+    "deploy": "npm run build && wrangler deploy",
     "dev": "npm run redirects && npx @11ty/eleventy --serve",
     "start": "npm run dev"
   },
@@ -20,6 +21,7 @@
     "satori": "^0.26.0",
     "sharp": "^0.35.1",
     "turndown": "^7.2.0",
-    "turndown-plugin-gfm": "^1.0.2"
+    "turndown-plugin-gfm": "^1.0.2",
+    "wrangler": "^4.0.0"
   }
 }
