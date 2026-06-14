@@ -10,8 +10,8 @@ Static site built with [Eleventy (11ty)](https://www.11ty.dev/). Hosted on [Clou
 
 ```
 .
-├── .mise/config.toml         # Node 22 + aube (local/CI only; not repo root — Cloudflare auto-runs mise if mise.toml is at root)
-├── aube-lock.yaml            # Dependency lockfile (aube native)
+├── .mise/config.toml         # Node 22 (local/CI; keep out of repo root as mise.toml)
+├── package-lock.json       # Dependency lockfile
 ├── wrangler.jsonc            # Cloudflare Workers static assets config
 ├── .eleventy.js              # Eleventy config
 ├── data/
@@ -60,25 +60,25 @@ Static site built with [Eleventy (11ty)](https://www.11ty.dev/). Hosted on [Clou
 
 ## Local development
 
-Requires [mise](https://mise.jdx.dev/) (2026.4.18+) with Node 22 and aube pinned in `.mise/config.toml`.
+Requires [mise](https://mise.jdx.dev/) for Node 22 (optional but recommended), or any Node 22 install.
 
 ```bash
 mise trust
 mise install
-aube install
-aube run dev
+npm install
+npm run dev
 ```
 
 Or use mise tasks: `mise run dev`, `mise run build`, `mise run deploy`.
 
-**Lockfile:** `aube-lock.yaml` (aube native). After changing `package.json`, run `aube install`. CI uses `aube ci` (frozen lockfile). Dependabot does not support this format yet; use `aube update` for dependency bumps.
+**Lockfile:** `package-lock.json`. After changing `package.json`, run `npm install`. CI uses `npm ci`.
 
 Open http://localhost:8080 (Eleventy’s default port).
 
 Production build (redirects → Eleventy → Open Graph images):
 
 ```bash
-aube run build
+npm run build
 # Output in _site/ (includes _site/og/*.png for social previews)
 ```
 
@@ -86,7 +86,7 @@ Copy `.env.example` to `.env` for local Fathom testing. Production uses Cloudfla
 
 ## Cloudflare deploy
 
-Same pattern as [paperstickio/website](https://github.com/paperstickio/website): **`wrangler.jsonc` is the config**, deploy with **`npx wrangler deploy`**. The difference is this site has a build step (Eleventy → `_site/`), so `wrangler.jsonc` defines `build.command`.
+Same pattern as [paperstickio/website](https://github.com/paperstickio/website): **`wrangler.jsonc` is the config**, deploy with **`npx wrangler deploy`**. This site has a build step (Eleventy → `_site/`).
 
 1. Push this repo to GitHub.
 2. Cloudflare dashboard → **Workers & Pages** → connect repo **`onerinas/onerinas-com`**.
@@ -94,34 +94,19 @@ Same pattern as [paperstickio/website](https://github.com/paperstickio/website):
 
    | Setting | Value |
    |---------|--------|
-   | Build command | see below |
+   | Build command | `npm run build` |
    | Deploy command | `npx wrangler deploy --no-build` |
 
-   Cloudflare includes Node 22 but not mise or aube. Set `SKIP_DEPENDENCY_INSTALL=true` so Cloudflare does not run `bun install` before your command (which would ignore `aube-lock.yaml`).
-
-   **Build command:**
-
-   ```bash
-   npm install -g @endevco/aube --ignore-scripts=false && aube ci && aube run build
-   ```
-
-   **Deploy command:**
-
-   ```bash
-   npx wrangler deploy --no-build
-   ```
+   Cloudflare auto-installs deps from `package-lock.json` before the build command. **`npm run build` must be in the build command** because Cloudflare Workers Builds does not run `build.command` from `wrangler.jsonc`. The deploy step uploads `_site/`.
 
    **Build variables** (Settings → Build → Build variables):
 
    | Variable | Value |
    |----------|--------|
-   | `SKIP_DEPENDENCY_INSTALL` | `true` |
    | `NODE_ENV` | `production` |
    | `FATHOM_SITE_ID` | your Fathom site ID |
 
-   `aube ci` installs deps from the lockfile. **`aube run build` must run in the build command** because Cloudflare Workers Builds does not run `build.command` from `wrangler.jsonc`. The deploy step uploads `_site/`. Use mise locally for dev (`.mise/config.toml`); do not put `mise.toml` at the repo root or Cloudflare will auto-run `mise install` and fail on unrelated tools (Hugo, Ruby, etc.).
-
-   Do **not** set `NODE_VERSION` unless needed; Cloudflare defaults to Node 22. Build variables are build-time only, not runtime Worker variables.
+   Build variables are build-time only, not runtime Worker variables.
 
 4. Add custom domain **`onerinas.com`** under **Custom domains**.
 
@@ -134,7 +119,7 @@ Same pattern as [paperstickio/website](https://github.com/paperstickio/website):
 
 Every push to the production branch rebuilds and deploys. Preview URLs on PRs are included.
 
-Local deploy: `aube ci && mise run deploy` (or `npx wrangler deploy` after deps are installed).
+Local deploy: `npm ci && npm run build && npx wrangler deploy --no-build`.
 
 ## Adding a static page
 
@@ -184,7 +169,7 @@ No manifest or redirect entry needed.
 3. **Regenerate redirects** (also runs on build):
 
    ```bash
-   aube run redirects
+   npm run redirects
    ```
 
    This appends `/articles/2 /articles/2-my-new-post/ 301` to `src/_redirects`.
@@ -195,7 +180,7 @@ No manifest or redirect entry needed.
 
 `data/articles.yml` is the source of truth. `scripts/generate-redirects.js` writes `src/_redirects`, which Eleventy copies to `_site/_redirects` for Cloudflare.
 
-Do not hand-edit `src/_redirects`. Run `aube run redirects` after changing the manifest.
+Do not hand-edit `src/_redirects`. Run `npm run redirects` after changing the manifest.
 
 ## Bulk migration (later)
 
@@ -203,14 +188,14 @@ When you export from Feedbackface / OneSimpleBlog (`id`, `slug`, `title`, `body`
 
 1. Append rows to `data/articles.yml`.
 2. Add markdown files under `src/articles/` (or extend the script to scaffold them).
-3. Run `aube run redirects && aube run build`.
+3. Run `npm run redirects && npm run build`.
 
 **Already migrated:** all 69 posts from `blog.onerinas.com` were imported with:
 
 ```bash
-aube run import:blog   # scrapes live site → src/articles/ + data/articles.yml
-aube run redirects
-aube run build
+npm run import:blog   # scrapes live site → src/articles/ + data/articles.yml
+npm run redirects
+npm run build
 ```
 
 Re-run `import:blog` only if you need to refresh from the live site (overwrites articles).

@@ -1,21 +1,17 @@
 [tools]
 node = "22"
-aube = "latest"
-
-[settings]
-npm.package_manager = "aube"
 
 [env]
 _.file = ".env"
 
 [tasks.build]
 description = "Build site for production"
-run = "aube run build"
+run = "npm run build"
 
 [tasks.dev]
 description = "Run local dev server"
-run = "aube run dev"
+run = "npm run dev"
 
 [tasks.deploy]
 description = "Build and deploy to Cloudflare"
-run = "aube exec wrangler deploy"
+run = "npx wrangler deploy"

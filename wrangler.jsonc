@@ -3,7 +3,7 @@
   "name": "onerinas-com",
   "compatibility_date": "2026-06-14",
   "build": {
-    "command": "aube run build"
+    "command": "npm run build"
   },
   "assets": {
     "directory": "./_site"
