@@ -463,6 +463,43 @@ a:hover {
   margin-top: 0.25rem;
 }
 
+.article-group + .article-group {
+  margin-top: 2.5rem;
+}
+
+.article-group-heading {
+  margin: 0 0 0.75rem;
+  font-size: 0.8125rem;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--text-light);
+}
+
+.topic-badge {
+  display: inline-block;
+  margin-right: 0.75rem;
+  padding: 0.15rem 0.5rem;
+  border-radius: 999px;
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: var(--secondary);
+  background: rgba(255, 107, 53, 0.1);
+}
+
+.article-header .meta {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.5rem 0.75rem;
+}
+
+.article-header .meta time {
+  margin: 0;
+}
+
 .article-header {
   margin-bottom: 2rem;
   padding-bottom: 1.5rem;

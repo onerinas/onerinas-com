@@ -3,6 +3,7 @@ id: 2
 slug: 10-day-streak-for-a-big-time-procrastinator
 title: 🔥 10-day streak for a big time procrastinator
 date: 2021-04-05
+topic: notes
 layout: layouts/article.njk
 permalink: /articles/2-10-day-streak-for-a-big-time-procrastinator/
 tags:

@@ -3,6 +3,7 @@ id: 51
 slug: til-in-flutter-we-can-specify-the-app-version-and-build-number-in-pubspec-yaml
 title: TIL in Flutter, we can specify the app version and build number in pubspec.yaml
 date: 2022-05-07
+topic: til
 layout: layouts/article.njk
 permalink: /articles/51-til-in-flutter-we-can-specify-the-app-version-and-build-number-in-pubspec-yaml/
 tags:

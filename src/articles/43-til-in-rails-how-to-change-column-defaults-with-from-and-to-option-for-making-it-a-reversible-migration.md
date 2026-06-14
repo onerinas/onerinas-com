@@ -3,6 +3,7 @@ id: 43
 slug: til-in-rails-how-to-change-column-defaults-with-from-and-to-option-for-making-it-a-reversible-migration
 title: "TIL in Rails: How to change column defaults with :from and :to option for making it a reversible migration"
 date: 2024-01-25
+topic: til
 layout: layouts/article.njk
 permalink: /articles/43-til-in-rails-how-to-change-column-defaults-with-from-and-to-option-for-making-it-a-reversible-migration/
 tags:

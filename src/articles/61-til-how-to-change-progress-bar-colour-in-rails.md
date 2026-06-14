@@ -3,6 +3,7 @@ id: 61
 slug: til-how-to-change-progress-bar-colour-in-rails
 title: TIL How to change progress bar colour in Rails
 date: 2022-01-21
+topic: til
 layout: layouts/article.njk
 permalink: /articles/61-til-how-to-change-progress-bar-colour-in-rails/
 tags:

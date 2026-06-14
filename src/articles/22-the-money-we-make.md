@@ -3,6 +3,7 @@ id: 22
 slug: the-money-we-make
 title: The money we make.
 date: 2024-06-16
+topic: notes
 layout: layouts/article.njk
 permalink: /articles/22-the-money-we-make/
 tags:

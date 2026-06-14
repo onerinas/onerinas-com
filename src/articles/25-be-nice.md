@@ -3,6 +3,7 @@ id: 25
 slug: be-nice
 title: Be nice.
 date: 2024-10-07
+topic: notes
 layout: layouts/article.njk
 permalink: /articles/25-be-nice/
 tags:

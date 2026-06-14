@@ -3,6 +3,7 @@ id: 59
 slug: til-about-using-counter_cache-in-rails-to-save-association-s-count-in-parent-model
 title: "TIL about using counter_cache in rails to save association's count in parent model"
 date: 2022-01-26
+topic: til
 layout: layouts/article.njk
 permalink: /articles/59-til-about-using-counter_cache-in-rails-to-save-association-s-count-in-parent-model/
 tags:

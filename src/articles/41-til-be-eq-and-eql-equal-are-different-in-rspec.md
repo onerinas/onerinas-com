@@ -3,6 +3,7 @@ id: 41
 slug: til-be-eq-and-eql-equal-are-different-in-rspec
 title: "TIL: \"be\", \"eq\" and \"eql\", \"equal\" are different in rspec"
 date: 2024-02-01
+topic: til
 layout: layouts/article.njk
 permalink: /articles/41-til-be-eq-and-eql-equal-are-different-in-rspec/
 tags:

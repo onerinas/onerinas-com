@@ -3,6 +3,7 @@ id: 26
 slug: i-feel-dumb
 title: I feel dumb.
 date: 2024-10-25
+topic: notes
 layout: layouts/article.njk
 permalink: /articles/26-i-feel-dumb/
 tags:

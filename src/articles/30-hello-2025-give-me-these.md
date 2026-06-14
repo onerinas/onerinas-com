@@ -3,6 +3,7 @@ id: 30
 slug: hello-2025-give-me-these
 title: "Hello 2025, give me these:"
 date: 2025-01-07
+topic: notes
 layout: layouts/article.njk
 permalink: /articles/30-hello-2025-give-me-these/
 tags:

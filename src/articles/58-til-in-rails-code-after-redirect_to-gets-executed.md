@@ -3,6 +3,7 @@ id: 58
 slug: til-in-rails-code-after-redirect_to-gets-executed
 title: "TIL in Rails: Code after redirect_to gets executed"
 date: 2022-02-06
+topic: til
 layout: layouts/article.njk
 permalink: /articles/58-til-in-rails-code-after-redirect_to-gets-executed/
 tags:

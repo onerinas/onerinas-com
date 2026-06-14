@@ -3,6 +3,7 @@ id: 47
 slug: til-about-bin-rails-runner-in-rails
 title: "TIL about 'bin/rails runner' in Rails"
 date: 2023-04-03
+topic: til
 layout: layouts/article.njk
 permalink: /articles/47-til-about-bin-rails-runner-in-rails/
 tags:

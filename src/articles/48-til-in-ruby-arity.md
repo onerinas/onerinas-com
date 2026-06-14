@@ -3,6 +3,7 @@ id: 48
 slug: til-in-ruby-arity
 title: "TIL in Ruby: `arity`"
 date: 2022-10-09
+topic: til
 layout: layouts/article.njk
 permalink: /articles/48-til-in-ruby-arity/
 tags:

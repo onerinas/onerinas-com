@@ -3,6 +3,7 @@ id: 1
 slug: i-don-t-write
 title: "I don't write"
 date: 2021-03-23
+topic: notes
 layout: layouts/article.njk
 permalink: /articles/1-i-don-t-write/
 tags:

@@ -3,6 +3,7 @@ id: 34
 slug: til-check-cache-exists-and-value-in-rails-console
 title: "TIL: Check cache exists and value in rails console"
 date: 2024-11-20
+topic: til
 layout: layouts/article.njk
 permalink: /articles/34-til-check-cache-exists-and-value-in-rails-console/
 tags:

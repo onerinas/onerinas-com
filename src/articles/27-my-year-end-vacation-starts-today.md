@@ -3,6 +3,7 @@ id: 27
 slug: my-year-end-vacation-starts-today
 title: My year-end vacation starts today.
 date: 2024-12-17
+topic: notes
 layout: layouts/article.njk
 permalink: /articles/27-my-year-end-vacation-starts-today/
 tags:

@@ -140,13 +140,20 @@ function yamlString(value) {
   return value;
 }
 
+function inferTopic(title) {
+  const normalized = String(title).replace(/^["']|["']$/g, "").trim();
+  return /^TIL\b/i.test(normalized) ? "til" : "notes";
+}
+
 function buildFrontMatter({ id, slug, title, publishedAt }) {
+  const topic = inferTopic(title);
   return [
     "---",
     `id: ${id}`,
     `slug: ${slug}`,
     `title: ${yamlString(title)}`,
     `date: ${publishedAt}`,
+    `topic: ${topic}`,
     "layout: layouts/article.njk",
     `permalink: /articles/${id}-${slug}/`,
     "tags:",

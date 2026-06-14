@@ -4,7 +4,12 @@ layout: layouts/base.njk
 <article class="article">
   <header class="article-header">
     <h1>{{ title }}</h1>
-    <p class="meta"><time datetime="{{ date | isoDate }}">{{ date | readableDate }}</time></p>
+    <p class="meta">
+      {%- if topic %}
+      <span class="topic-badge">{{ topic | topicLabel }}</span>
+      {%- endif %}
+      <time datetime="{{ date | isoDate }}">{{ date | readableDate }}</time>
+    </p>
   </header>
   <div class="article-body">
     {{ content | safe }}

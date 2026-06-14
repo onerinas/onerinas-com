@@ -3,6 +3,7 @@ id: 24
 slug: nothing-is-as-simple-as-it-seems
 title: Nothing is as simple as it seems.
 date: 2024-07-16
+topic: notes
 layout: layouts/article.njk
 permalink: /articles/24-nothing-is-as-simple-as-it-seems/
 tags:

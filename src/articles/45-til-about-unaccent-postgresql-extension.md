@@ -3,6 +3,7 @@ id: 45
 slug: til-about-unaccent-postgresql-extension
 title: TIL about unaccent (PostgreSQL extension)
 date: 2024-01-16
+topic: til
 layout: layouts/article.njk
 permalink: /articles/45-til-about-unaccent-postgresql-extension/
 tags:

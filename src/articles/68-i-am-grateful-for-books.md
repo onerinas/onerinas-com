@@ -3,6 +3,7 @@ id: 68
 slug: i-am-grateful-for-books
 title: I am grateful for books
 date: 2025-07-31
+topic: notes
 layout: layouts/article.njk
 permalink: /articles/68-i-am-grateful-for-books/
 tags:

@@ -3,6 +3,7 @@ id: 29
 slug: happy-new-year-and-a-link-to-try-hard-next-year
 title: Happy New Year 🎉 (and a link to try hard next year)
 date: 2024-12-31
+topic: notes
 layout: layouts/article.njk
 permalink: /articles/29-happy-new-year-and-a-link-to-try-hard-next-year/
 tags:

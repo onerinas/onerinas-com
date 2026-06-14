@@ -3,6 +3,7 @@ id: 65
 slug: checklist-before-starting-a-new-saas-business
 title: Checklist before starting a new SaaS business
 date: 2025-05-17
+topic: notes
 layout: layouts/article.njk
 permalink: /articles/65-checklist-before-starting-a-new-saas-business/
 tags:

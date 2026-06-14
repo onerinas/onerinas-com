@@ -3,6 +3,7 @@ id: 66
 slug: how-optimism-is-my-superpower-and-a-curse
 title: How optimism is my superpower and a curse
 date: 2025-06-17
+topic: notes
 layout: layouts/article.njk
 permalink: /articles/66-how-optimism-is-my-superpower-and-a-curse/
 tags:

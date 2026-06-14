@@ -3,6 +3,7 @@ id: 6
 slug: how-am-i-handling-multiple-projects-while-having-a-full-time-job
 title: 🧙 How am I handling multiple projects while having a full time job?
 date: 2021-08-19
+topic: notes
 layout: layouts/article.njk
 permalink: /articles/6-how-am-i-handling-multiple-projects-while-having-a-full-time-job/
 tags:

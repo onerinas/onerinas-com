@@ -3,6 +3,7 @@ id: 69
 slug: til-in-elixir-we-can-have-two-functions-with-the-same-name
 title: "TIL in Elixir: We can have two functions with the same name"
 date: 2026-05-01
+topic: til
 layout: layouts/article.njk
 permalink: /articles/69-til-in-elixir-we-can-have-two-functions-with-the-same-name/
 tags:

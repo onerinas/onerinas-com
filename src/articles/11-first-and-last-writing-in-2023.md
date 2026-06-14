@@ -3,6 +3,7 @@ id: 11
 slug: first-and-last-writing-in-2023
 title: First and last writing in 2023
 date: 2023-12-21
+topic: notes
 layout: layouts/article.njk
 permalink: /articles/11-first-and-last-writing-in-2023/
 tags:

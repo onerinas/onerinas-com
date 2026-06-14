@@ -3,6 +3,7 @@ id: 3
 slug: why-and-how-i-built-highscore-domains
 title: Why and how I built HIGHSCORE.domains
 date: 2021-06-30
+topic: notes
 layout: layouts/article.njk
 permalink: /articles/3-why-and-how-i-built-highscore-domains/
 tags:

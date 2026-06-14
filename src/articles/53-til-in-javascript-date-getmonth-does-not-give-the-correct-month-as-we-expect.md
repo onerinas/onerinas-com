@@ -3,6 +3,7 @@ id: 53
 slug: til-in-javascript-date-getmonth-does-not-give-the-correct-month-as-we-expect
 title: TIL in Javascript, Date `getMonth()` does not give the correct month as we expect 🤯
 date: 2022-05-05
+topic: til
 layout: layouts/article.njk
 permalink: /articles/53-til-in-javascript-date-getmonth-does-not-give-the-correct-month-as-we-expect/
 tags:

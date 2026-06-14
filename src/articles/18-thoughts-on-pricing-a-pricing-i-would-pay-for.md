@@ -3,6 +3,7 @@ id: 18
 slug: thoughts-on-pricing-a-pricing-i-would-pay-for
 title: Thoughts on pricing - a pricing I would pay for.
 date: 2024-04-16
+topic: notes
 layout: layouts/article.njk
 permalink: /articles/18-thoughts-on-pricing-a-pricing-i-would-pay-for/
 tags:

@@ -6,7 +6,7 @@
     "redirects": "node scripts/generate-redirects.js",
     "import:blog": "node scripts/import-from-blog.js",
     "fix:escapes": "node scripts/fix-markdown-escapes.js",
-    "images": "node scripts/install-article-images.js",
+    "assign:topics": "node scripts/assign-topics.js",
     "build": "npm run redirects && npx @11ty/eleventy",
     "dev": "npm run redirects && npx @11ty/eleventy --serve",
     "start": "npm run dev"

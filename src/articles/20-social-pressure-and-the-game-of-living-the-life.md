@@ -3,6 +3,7 @@ id: 20
 slug: social-pressure-and-the-game-of-living-the-life
 title: Social pressure and the game of living the life.
 date: 2024-04-16
+topic: notes
 layout: layouts/article.njk
 permalink: /articles/20-social-pressure-and-the-game-of-living-the-life/
 tags:

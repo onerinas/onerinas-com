@@ -3,6 +3,7 @@ id: 32
 slug: my-remote-work-schedule
 title: My remote work schedule
 date: 2025-03-04
+topic: notes
 layout: layouts/article.njk
 permalink: /articles/32-my-remote-work-schedule/
 tags:

@@ -3,6 +3,7 @@ id: 64
 slug: til-how-to-colour-console-logs
 title: TIL how to colour console logs
 date: 2022-01-18
+topic: til
 layout: layouts/article.njk
 permalink: /articles/64-til-how-to-colour-console-logs/
 tags:

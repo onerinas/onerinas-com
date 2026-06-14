@@ -3,6 +3,7 @@ id: 8
 slug: what-you-can-learn-in-the-1st-year-of-indie-hacking-journey
 title: What you can learn in the 1st year of indie hacking journey
 date: 2021-10-21
+topic: notes
 layout: layouts/article.njk
 permalink: /articles/8-what-you-can-learn-in-the-1st-year-of-indie-hacking-journey/
 tags:

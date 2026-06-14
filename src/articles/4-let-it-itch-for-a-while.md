@@ -3,6 +3,7 @@ id: 4
 slug: let-it-itch-for-a-while
 title: Let it itch for a while
 date: 2021-07-16
+topic: notes
 layout: layouts/article.njk
 permalink: /articles/4-let-it-itch-for-a-while/
 tags:

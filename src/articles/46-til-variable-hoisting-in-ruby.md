@@ -3,6 +3,7 @@ id: 46
 slug: til-variable-hoisting-in-ruby
 title: TIL Variable hoisting in ruby
 date: 2023-03-11
+topic: til
 layout: layouts/article.njk
 permalink: /articles/46-til-variable-hoisting-in-ruby/
 tags:

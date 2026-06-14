@@ -3,6 +3,7 @@ id: 38
 slug: til-about-streaming-and-server-sent-event
 title: TIL about Streaming and Server Sent Event
 date: 2024-03-01
+topic: til
 layout: layouts/article.njk
 permalink: /articles/38-til-about-streaming-and-server-sent-event/
 tags:

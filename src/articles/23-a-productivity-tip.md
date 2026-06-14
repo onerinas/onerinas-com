@@ -3,6 +3,7 @@ id: 23
 slug: a-productivity-tip
 title: "A productivity tip:"
 date: 2024-07-10
+topic: notes
 layout: layouts/article.njk
 permalink: /articles/23-a-productivity-tip/
 tags:

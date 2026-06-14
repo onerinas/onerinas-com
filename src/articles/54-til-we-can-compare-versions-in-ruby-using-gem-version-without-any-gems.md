@@ -3,6 +3,7 @@ id: 54
 slug: til-we-can-compare-versions-in-ruby-using-gem-version-without-any-gems
 title: "TIL we can compare versions in Ruby using `Gem::Version` without any gems"
 date: 2022-04-29
+topic: til
 layout: layouts/article.njk
 permalink: /articles/54-til-we-can-compare-versions-in-ruby-using-gem-version-without-any-gems/
 tags:

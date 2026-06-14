@@ -3,6 +3,7 @@ id: 13
 slug: treat-them-the-way-you-want-to-be-treated
 title: Treat them the way you want to be treated
 date: 2024-01-21
+topic: notes
 layout: layouts/article.njk
 permalink: /articles/13-treat-them-the-way-you-want-to-be-treated/
 tags:

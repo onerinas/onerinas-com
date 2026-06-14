@@ -3,6 +3,7 @@ id: 15
 slug: follow-your-intuition-not-dreams
 title: Follow your intuition, not dreams
 date: 2024-03-05
+topic: notes
 layout: layouts/article.njk
 permalink: /articles/15-follow-your-intuition-not-dreams/
 tags:

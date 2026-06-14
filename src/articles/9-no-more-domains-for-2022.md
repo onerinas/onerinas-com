@@ -3,6 +3,7 @@ id: 9
 slug: no-more-domains-for-2022
 title: No more domains for 2022
 date: 2022-01-23
+topic: notes
 layout: layouts/article.njk
 permalink: /articles/9-no-more-domains-for-2022/
 tags:

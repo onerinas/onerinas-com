@@ -3,6 +3,7 @@ id: 10
 slug: life-sucks
 title: Life sucks.
 date: 2022-02-11
+topic: notes
 layout: layouts/article.njk
 permalink: /articles/10-life-sucks/
 tags:

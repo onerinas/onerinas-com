@@ -3,6 +3,7 @@ id: 63
 slug: til-what-policy-to-use-for-aws-s3-to-work-with-rails-active-storage
 title: TIL what policy to use for AWS S3 to work with Rails Active Storage
 date: 2022-01-19
+topic: til
 layout: layouts/article.njk
 permalink: /articles/63-til-what-policy-to-use-for-aws-s3-to-work-with-rails-active-storage/
 tags:

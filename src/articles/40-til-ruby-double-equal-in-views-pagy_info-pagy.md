@@ -3,6 +3,7 @@ id: 40
 slug: til-ruby-double-equal-in-views-pagy_info-pagy
 title: "TIL: Ruby double equal in views <%== pagy_info(@pagy) %>"
 date: 2024-02-14
+topic: til
 layout: layouts/article.njk
 permalink: /articles/40-til-ruby-double-equal-in-views-pagy_info-pagy/
 tags:

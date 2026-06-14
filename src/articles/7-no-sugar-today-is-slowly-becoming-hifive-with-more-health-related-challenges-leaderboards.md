@@ -3,6 +3,7 @@ id: 7
 slug: no-sugar-today-is-slowly-becoming-hifive-with-more-health-related-challenges-leaderboards
 title: No Sugar Today is slowly becoming HiFive with more health related challenges & leaderboards
 date: 2021-10-10
+topic: notes
 layout: layouts/article.njk
 permalink: /articles/7-no-sugar-today-is-slowly-becoming-hifive-with-more-health-related-challenges-leaderboards/
 tags:

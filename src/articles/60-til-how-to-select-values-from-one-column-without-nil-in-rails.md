@@ -3,6 +3,7 @@ id: 60
 slug: til-how-to-select-values-from-one-column-without-nil-in-rails
 title: TIL how to select values from one column without `nil` in Rails
 date: 2022-01-23
+topic: til
 layout: layouts/article.njk
 permalink: /articles/60-til-how-to-select-values-from-one-column-without-nil-in-rails/
 tags:

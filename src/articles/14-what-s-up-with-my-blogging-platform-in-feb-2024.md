@@ -3,6 +3,7 @@ id: 14
 slug: what-s-up-with-my-blogging-platform-in-feb-2024
 title: "What's up with my blogging platform in Feb, 2024"
 date: 2024-03-04
+topic: notes
 layout: layouts/article.njk
 permalink: /articles/14-what-s-up-with-my-blogging-platform-in-feb-2024/
 tags:

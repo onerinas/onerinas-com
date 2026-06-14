@@ -3,6 +3,7 @@ id: 16
 slug: i-don-t-trust-you
 title: I don’t trust you
 date: 2024-03-09
+topic: notes
 layout: layouts/article.njk
 permalink: /articles/16-i-don-t-trust-you/
 tags:

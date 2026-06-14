@@ -3,6 +3,7 @@ id: 21
 slug: a-little-hack-that-keeps-me-sane
 title: A little hack that keeps me sane
 date: 2024-06-01
+topic: notes
 layout: layouts/article.njk
 permalink: /articles/21-a-little-hack-that-keeps-me-sane/
 tags:

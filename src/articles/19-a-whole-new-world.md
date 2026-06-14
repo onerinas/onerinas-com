@@ -3,6 +3,7 @@ id: 19
 slug: a-whole-new-world
 title: A whole new world.
 date: 2024-04-16
+topic: notes
 layout: layouts/article.njk
 permalink: /articles/19-a-whole-new-world/
 tags:

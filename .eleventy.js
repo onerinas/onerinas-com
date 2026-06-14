@@ -35,6 +35,21 @@ module.exports = function (eleventyConfig) {
     }
   });
 
+  eleventyConfig.addFilter("topicLabel", (topic) => {
+    switch (topic) {
+      case "til":
+        return "TIL";
+      case "notes":
+        return "Notes";
+      default:
+        return "";
+    }
+  });
+
+  eleventyConfig.addFilter("byTopic", (items, topic) => {
+    return items.filter((item) => item.data.topic === topic);
+  });
+
   return {
     dir: {
       input: "src",

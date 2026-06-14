@@ -3,6 +3,7 @@ id: 31
 slug: 2025-is-the-year-i-m-going-minimalist
 title: "2025 is the year I'm going minimalist."
 date: 2025-01-17
+topic: notes
 layout: layouts/article.njk
 permalink: /articles/31-2025-is-the-year-i-m-going-minimalist/
 tags:

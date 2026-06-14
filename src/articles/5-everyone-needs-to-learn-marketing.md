@@ -3,6 +3,7 @@ id: 5
 slug: everyone-needs-to-learn-marketing
 title: Everyone needs to learn marketing
 date: 2021-07-16
+topic: notes
 layout: layouts/article.njk
 permalink: /articles/5-everyone-needs-to-learn-marketing/
 tags:

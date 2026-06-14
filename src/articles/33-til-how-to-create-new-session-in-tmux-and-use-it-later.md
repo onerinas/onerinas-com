@@ -3,6 +3,7 @@ id: 33
 slug: til-how-to-create-new-session-in-tmux-and-use-it-later
 title: "TIL: How to create new session in tmux and use it later"
 date: 2025-03-12
+topic: til
 layout: layouts/article.njk
 permalink: /articles/33-til-how-to-create-new-session-in-tmux-and-use-it-later/
 tags:

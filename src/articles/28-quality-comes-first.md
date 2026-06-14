@@ -3,6 +3,7 @@ id: 28
 slug: quality-comes-first
 title: Quality comes first.
 date: 2024-12-18
+topic: notes
 layout: layouts/article.njk
 permalink: /articles/28-quality-comes-first/
 tags:

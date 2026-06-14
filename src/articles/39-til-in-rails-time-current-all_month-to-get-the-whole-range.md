@@ -3,6 +3,7 @@ id: 39
 slug: til-in-rails-time-current-all_month-to-get-the-whole-range
 title: "TIL in rails: `Time.current.all_month` to get the whole range"
 date: 2024-02-16
+topic: til
 layout: layouts/article.njk
 permalink: /articles/39-til-in-rails-time-current-all_month-to-get-the-whole-range/
 tags:

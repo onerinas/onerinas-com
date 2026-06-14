@@ -3,6 +3,7 @@ id: 37
 slug: til-how-to-check-index-creation-progress-in-postgres
 title: TIL how to check index creation progress in postgres
 date: 2024-09-17
+topic: til
 layout: layouts/article.njk
 permalink: /articles/37-til-how-to-check-index-creation-progress-in-postgres/
 tags:
