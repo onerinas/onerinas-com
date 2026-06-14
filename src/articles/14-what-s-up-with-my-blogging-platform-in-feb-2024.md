@@ -38,4 +38,4 @@ Screenshot 2024-03-04 at 9.43.49 PM.png 1.06 MB
 
 Did you read the January edition? If not, here it is:  
   
-[https://blog.onerinas.com/articles/12--what-s-up-with-my-blogging-platform-in-jan-2024](https://blog.onerinas.com/articles/12--what-s-up-with-my-blogging-platform-in-jan-2024)
+[https://onerinas.com/articles/12-what-s-up-with-my-blogging-platform-in-jan-2024/](https://onerinas.com/articles/12-what-s-up-with-my-blogging-platform-in-jan-2024/)

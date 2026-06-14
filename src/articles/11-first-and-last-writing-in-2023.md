@@ -13,7 +13,7 @@ I did not write in 2023, well, at least not here.
 
   
 
-That does not surprise me, as my first written piece back in 2021 was titled [I don't write](https://blog.onerinas.com/articles/1). How many have I written each year since then? Let's see.
+That does not surprise me, as my first written piece back in 2021 was titled [I don't write](https://onerinas.com/articles/1). How many have I written each year since then? Let's see.
 
   
 
@@ -21,14 +21,14 @@ That does not surprise me, as my first written piece back in 2021 was titled [I 
 
   
 
-1.  March 23, [I don't write](https://blog.onerinas.com/articles/1) 
-2.  April 5, 🔥 [10-day streak for a big time procrastinator](https://blog.onerinas.com/articles/2)
-3.  June 30, [Why and how I built HIGHSCORE.domains](https://blog.onerinas.com/articles/3) 
-4.  July 16, [Everyone needs to learn marketing](https://blog.onerinas.com/articles/5)
-5.  July 16, [Let it itch for a while](https://blog.onerinas.com/articles/4) 
-6.  August 19, [🧙 How am I handling multiple projects while having a full time job?](https://blog.onerinas.com/articles/6)
-7.  October 10, [No Sugar Today is slowly becoming HiFive with more health related challenges & leaderboards](https://blog.onerinas.com/articles/7)
-8.  October 21, [What you can learn in the 1st year of indie hacking journey](https://blog.onerinas.com/articles/8) 
+1.  March 23, [I don't write](https://onerinas.com/articles/1) 
+2.  April 5, 🔥 [10-day streak for a big time procrastinator](https://onerinas.com/articles/2)
+3.  June 30, [Why and how I built HIGHSCORE.domains](https://onerinas.com/articles/3) 
+4.  July 16, [Everyone needs to learn marketing](https://onerinas.com/articles/5)
+5.  July 16, [Let it itch for a while](https://onerinas.com/articles/4) 
+6.  August 19, [🧙 How am I handling multiple projects while having a full time job?](https://onerinas.com/articles/6)
+7.  October 10, [No Sugar Today is slowly becoming HiFive with more health related challenges & leaderboards](https://onerinas.com/articles/7)
+8.  October 21, [What you can learn in the 1st year of indie hacking journey](https://onerinas.com/articles/8) 
 
   
 I'm genuinely surprised to see these many in year 1. Not bad for a year where I started with the thought of "I don't write," isn't it? :D   
@@ -38,8 +38,8 @@ I'm genuinely surprised to see these many in year 1. Not bad for a year where I 
 
   
 
-1.  January 23, [No more domains for 2022](https://blog.onerinas.com/articles/9)
-2.  February 11, [Life sucks.](https://blog.onerinas.com/articles/10)
+1.  January 23, [No more domains for 2022](https://onerinas.com/articles/9)
+2.  February 11, [Life sucks.](https://onerinas.com/articles/10)
 
   
 
