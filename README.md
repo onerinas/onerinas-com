@@ -11,6 +11,7 @@ Static site built with [Eleventy (11ty)](https://www.11ty.dev/). Hosted on [Clou
 ```
 .
 ├── mise.toml                 # Node 22 + aube (mise-en-place)
+├── aube-lock.yaml            # Dependency lockfile (aube native)
 ├── wrangler.jsonc            # Cloudflare Workers static assets config
 ├── .eleventy.js              # Eleventy config
 ├── data/
@@ -71,6 +72,8 @@ aube run dev
 ```
 
 Or use mise tasks: `mise run dev`, `mise run build`, `mise run deploy`.
+
+**Lockfile:** `aube-lock.yaml` (aube native). After changing `package.json`, run `aube install`. CI uses `aube ci` (frozen lockfile). Dependabot does not support this format yet; use `aube update` for dependency bumps.
 
 Open http://localhost:8080 (Eleventy’s default port).
 

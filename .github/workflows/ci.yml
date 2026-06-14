@@ -14,5 +14,5 @@ jobs:
         with:
           version: 2026.6.9
           install: true
-      - run: aube install
+      - run: aube ci
       - run: aube run build

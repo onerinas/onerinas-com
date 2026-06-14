@@ -15,5 +15,5 @@ ensure_mise() {
 ensure_mise
 cd "$(dirname "$0")/.."
 mise install
-aube install
+aube ci
 aube run build
