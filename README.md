@@ -102,7 +102,7 @@ Same pattern as [paperstickio/website](https://github.com/paperstickio/website):
    **Build command:**
 
    ```bash
-   npm install -g @jdx/aube --ignore-scripts=false && aube ci && aube run build
+   npm install -g @endevco/aube --ignore-scripts=false && aube ci && aube run build
    ```
 
    **Deploy command:**
