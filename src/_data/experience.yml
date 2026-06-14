@@ -1,0 +1,51 @@
+- title: Product Engineer
+  company: Inline Manual
+  location: London, England, United Kingdom
+  date: September 2022 - Present
+
+- title: Founder
+  company: Tawsum Studio
+  location: United Arab Emirates
+  date: April 2023 - April 2024
+
+- title: Ruby on Rails Developer
+  company: Whitespectre
+  location: Andorra la Vella, Andorra
+  date: April 2022 - September 2022
+
+- title: Sr. Software Developer
+  company: KeepWorks Technologies Pvt. Ltd.
+  location: Bengaluru, Karnataka, India
+  date: September 2020 - April 2022
+  highlights:
+    - White-label Customer Support application for enterprise companies
+    - Chatbot using IBM Watson
+    - Building and maintaining a Cordova application using cordova-plugin-iosrtc
+    - Headless CMS for inhouse project uses
+    - In-house app for managing notifications and its templates for rails projects
+    - Dashboard to visualize data from different sources using Backbone.js
+    - Developer portal for a webrtc library
+
+- title: Software Developer
+  company: KeepWorks Technologies Pvt. Ltd.
+  location: Bengaluru, Karnataka, India
+  date: June 2016 - August 2020
+
+- title: Ruby on Rails Developer
+  company: WeddingOkay
+  location: Bengaluru, Karnataka, India
+  date: July 2015 - June 2016
+  highlights:
+    - A portal of vendors to check leads and follow up with them
+    - Integrating existing WordPress sites with a new portal built in Ruby on Rails for vendors
+
+- title: Web Developer
+  company: Freelance
+  date: April 2013 - 2015
+  highlights:
+    - "OutreachX.com: E-commerce website for outreach services"
+    - "Global Dried Flowers: Catalog website for a leading bulk dried flower manufacturer"
+    - "Lobestar (Android app): Career consultation for 10/12 standard students"
+    - "GradeTree: School Portal where students can attend interactive live classes"
+    - "OneTechBuddy: Tech blog built on WordPress"
+    - "Odishar: Portal for Odisha State"

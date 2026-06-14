@@ -1,0 +1,276 @@
+- id: 1
+  slug: i-don-t-write
+  title: I don't write
+  published_at: '2021-03-23'
+- id: 2
+  slug: 10-day-streak-for-a-big-time-procrastinator
+  title: 🔥 10-day streak for a big time procrastinator
+  published_at: '2021-04-05'
+- id: 3
+  slug: why-and-how-i-built-highscore-domains
+  title: Why and how I built HIGHSCORE.domains
+  published_at: '2021-06-30'
+- id: 4
+  slug: let-it-itch-for-a-while
+  title: Let it itch for a while
+  published_at: '2021-07-16'
+- id: 5
+  slug: everyone-needs-to-learn-marketing
+  title: Everyone needs to learn marketing
+  published_at: '2021-07-16'
+- id: 6
+  slug: how-am-i-handling-multiple-projects-while-having-a-full-time-job
+  title: 🧙 How am I handling multiple projects while having a full time job?
+  published_at: '2021-08-19'
+- id: 7
+  slug: no-sugar-today-is-slowly-becoming-hifive-with-more-health-related-challenges-leaderboards
+  title: No Sugar Today is slowly becoming HiFive with more health related challenges & leaderboards
+  published_at: '2021-10-10'
+- id: 8
+  slug: what-you-can-learn-in-the-1st-year-of-indie-hacking-journey
+  title: What you can learn in the 1st year of indie hacking journey
+  published_at: '2021-10-21'
+- id: 9
+  slug: no-more-domains-for-2022
+  title: No more domains for 2022
+  published_at: '2022-01-23'
+- id: 10
+  slug: life-sucks
+  title: Life sucks.
+  published_at: '2022-02-11'
+- id: 11
+  slug: first-and-last-writing-in-2023
+  title: First and last writing in 2023
+  published_at: '2023-12-21'
+- id: 12
+  slug: what-s-up-with-my-blogging-platform-in-jan-2024
+  title: What's up with my blogging platform in Jan, 2024
+  published_at: '2024-01-30'
+- id: 13
+  slug: treat-them-the-way-you-want-to-be-treated
+  title: Treat them the way you want to be treated
+  published_at: '2024-01-21'
+- id: 14
+  slug: what-s-up-with-my-blogging-platform-in-feb-2024
+  title: What's up with my blogging platform in Feb, 2024
+  published_at: '2024-03-04'
+- id: 15
+  slug: follow-your-intuition-not-dreams
+  title: Follow your intuition, not dreams
+  published_at: '2024-03-05'
+- id: 16
+  slug: i-don-t-trust-you
+  title: I don’t trust you
+  published_at: '2024-03-09'
+- id: 17
+  slug: a-friendly-reminder
+  title: A friendly reminder
+  published_at: '2024-03-26'
+- id: 18
+  slug: thoughts-on-pricing-a-pricing-i-would-pay-for
+  title: Thoughts on pricing - a pricing I would pay for.
+  published_at: '2024-04-16'
+- id: 19
+  slug: a-whole-new-world
+  title: A whole new world.
+  published_at: '2024-04-16'
+- id: 20
+  slug: social-pressure-and-the-game-of-living-the-life
+  title: Social pressure and the game of living the life.
+  published_at: '2024-04-16'
+- id: 21
+  slug: a-little-hack-that-keeps-me-sane
+  title: A little hack that keeps me sane
+  published_at: '2024-06-01'
+- id: 22
+  slug: the-money-we-make
+  title: The money we make.
+  published_at: '2024-06-16'
+- id: 23
+  slug: a-productivity-tip
+  title: 'A productivity tip:'
+  published_at: '2024-07-10'
+- id: 24
+  slug: nothing-is-as-simple-as-it-seems
+  title: Nothing is as simple as it seems.
+  published_at: '2024-07-16'
+- id: 25
+  slug: be-nice
+  title: Be nice.
+  published_at: '2024-10-07'
+- id: 26
+  slug: i-feel-dumb
+  title: I feel dumb.
+  published_at: '2024-10-25'
+- id: 27
+  slug: my-year-end-vacation-starts-today
+  title: My year-end vacation starts today.
+  published_at: '2024-12-17'
+- id: 28
+  slug: quality-comes-first
+  title: Quality comes first.
+  published_at: '2024-12-18'
+- id: 29
+  slug: happy-new-year-and-a-link-to-try-hard-next-year
+  title: Happy New Year 🎉 (and a link to try hard next year)
+  published_at: '2024-12-31'
+- id: 30
+  slug: hello-2025-give-me-these
+  title: 'Hello 2025, give me these:'
+  published_at: '2025-01-07'
+- id: 31
+  slug: 2025-is-the-year-i-m-going-minimalist
+  title: 2025 is the year I'm going minimalist.
+  published_at: '2025-01-17'
+- id: 32
+  slug: my-remote-work-schedule
+  title: My remote work schedule
+  published_at: '2025-03-04'
+- id: 33
+  slug: til-how-to-create-new-session-in-tmux-and-use-it-later
+  title: 'TIL: How to create new session in tmux and use it later'
+  published_at: '2025-03-12'
+- id: 34
+  slug: til-check-cache-exists-and-value-in-rails-console
+  title: 'TIL: Check cache exists and value in rails console'
+  published_at: '2024-11-20'
+- id: 35
+  slug: til-in-rails-how-to-check-which-database-a-model-is-connected-to-from-rails-console
+  title: TIL in rails how to check which database a model is connected to from rails console
+  published_at: '2024-11-13'
+- id: 36
+  slug: til-in-flutter-we-can-do-flutter-pub-deps-to-list-all-dependencies-used-in-a-nice-format
+  title: TIL in Flutter we can do "flutter pub deps" to list all dependencies used in a nice format.
+  published_at: '2024-10-06'
+- id: 37
+  slug: til-how-to-check-index-creation-progress-in-postgres
+  title: TIL how to check index creation progress in postgres
+  published_at: '2024-09-17'
+- id: 38
+  slug: til-about-streaming-and-server-sent-event
+  title: TIL about Streaming and Server Sent Event
+  published_at: '2024-03-01'
+- id: 39
+  slug: til-in-rails-time-current-all_month-to-get-the-whole-range
+  title: 'TIL in rails: `Time.current.all_month` to get the whole range'
+  published_at: '2024-02-16'
+- id: 40
+  slug: til-ruby-double-equal-in-views-pagy_info-pagy
+  title: 'TIL: Ruby double equal in views <%== pagy_info(@pagy) %>'
+  published_at: '2024-02-14'
+- id: 41
+  slug: til-be-eq-and-eql-equal-are-different-in-rspec
+  title: 'TIL: "be", "eq" and "eql", "equal" are different in rspec'
+  published_at: '2024-02-01'
+- id: 42
+  slug: til-we-can-do-array1-array-2-to-merge-them-and-get-unique-ones
+  title: TIL we can do `array1 | array 2` to merge them and get unique ones
+  published_at: '2024-01-26'
+- id: 43
+  slug: til-in-rails-how-to-change-column-defaults-with-from-and-to-option-for-making-it-a-reversible-migration
+  title: 'TIL in Rails: How to change column defaults with :from and :to option for making it a reversible migration'
+  published_at: '2024-01-25'
+- id: 44
+  slug: til-in-rails-model-none-returns-a-chainable-relation-with-zero-records
+  title: 'TIL in rails: `Model.none` returns a chainable relation with zero records'
+  published_at: '2024-01-16'
+- id: 45
+  slug: til-about-unaccent-postgresql-extension
+  title: TIL about unaccent (PostgreSQL extension)
+  published_at: '2024-01-16'
+- id: 46
+  slug: til-variable-hoisting-in-ruby
+  title: TIL Variable hoisting in ruby
+  published_at: '2023-03-11'
+- id: 47
+  slug: til-about-bin-rails-runner-in-rails
+  title: TIL about 'bin/rails runner' in Rails
+  published_at: '2023-04-03'
+- id: 48
+  slug: til-in-ruby-arity
+  title: 'TIL in Ruby: `arity`'
+  published_at: '2022-10-09'
+- id: 49
+  slug: til-learned-about-a-new-gem-decent_exposure
+  title: 'TIL: Learned about a new gem decent_exposure'
+  published_at: '2022-09-14'
+- id: 50
+  slug: til-about-postgresql-follower-database-in-heroku
+  title: TIL about PostgreSQL follower database in Heroku
+  published_at: '2022-05-16'
+- id: 51
+  slug: til-in-flutter-we-can-specify-the-app-version-and-build-number-in-pubspec-yaml
+  title: TIL in Flutter, we can specify the app version and build number in pubspec.yaml
+  published_at: '2022-05-07'
+- id: 52
+  slug: til-we-can-use-xed-to-open-xcode-with-given-folder-or-project
+  title: TIL we can use `xed` to open Xcode with given folder or project
+  published_at: '2022-05-07'
+- id: 53
+  slug: til-in-javascript-date-getmonth-does-not-give-the-correct-month-as-we-expect
+  title: TIL in Javascript, Date `getMonth()` does not give the correct month as we expect 🤯
+  published_at: '2022-05-05'
+- id: 54
+  slug: til-we-can-compare-versions-in-ruby-using-gem-version-without-any-gems
+  title: TIL we can compare versions in Ruby using `Gem::Version` without any gems
+  published_at: '2022-04-29'
+- id: 55
+  slug: til-in-flutter-ios-no-transparent-images-allowed-in-assets
+  title: 'TIL in Flutter (iOS): No transparent images allowed in assets'
+  published_at: '2022-04-10'
+- id: 56
+  slug: til-how-to-change-screenshot-directory-in-macos
+  title: TIL How to change screenshot directory in macOS
+  published_at: '2022-03-07'
+- id: 57
+  slug: heroku-cli-for-rails-console
+  title: Heroku cli for rails console
+  published_at: '2022-03-01'
+- id: 58
+  slug: til-in-rails-code-after-redirect_to-gets-executed
+  title: 'TIL in Rails: Code after redirect_to gets executed'
+  published_at: '2022-02-06'
+- id: 59
+  slug: til-about-using-counter_cache-in-rails-to-save-association-s-count-in-parent-model
+  title: TIL about using counter_cache in rails to save association's count in parent model
+  published_at: '2022-01-26'
+- id: 60
+  slug: til-how-to-select-values-from-one-column-without-nil-in-rails
+  title: TIL how to select values from one column without `nil` in Rails
+  published_at: '2022-01-23'
+- id: 61
+  slug: til-how-to-change-progress-bar-colour-in-rails
+  title: TIL How to change progress bar colour in Rails
+  published_at: '2022-01-21'
+- id: 62
+  slug: til-how-to-set-default-ruby-version-using-rvm
+  title: TIL how to set default ruby version using RVM
+  published_at: '2022-01-21'
+- id: 63
+  slug: til-what-policy-to-use-for-aws-s3-to-work-with-rails-active-storage
+  title: TIL what policy to use for AWS S3 to work with Rails Active Storage
+  published_at: '2022-01-19'
+- id: 64
+  slug: til-how-to-colour-console-logs
+  title: TIL how to colour console logs
+  published_at: '2022-01-18'
+- id: 65
+  slug: checklist-before-starting-a-new-saas-business
+  title: Checklist before starting a new SaaS business
+  published_at: '2025-05-17'
+- id: 66
+  slug: how-optimism-is-my-superpower-and-a-curse
+  title: How optimism is my superpower and a curse
+  published_at: '2025-06-17'
+- id: 67
+  slug: til-about-bundler-why
+  title: TIL about "bundler why"
+  published_at: '2025-07-29'
+- id: 68
+  slug: i-am-grateful-for-books
+  title: I am grateful for books
+  published_at: '2025-07-31'
+- id: 69
+  slug: til-in-elixir-we-can-have-two-functions-with-the-same-name
+  title: 'TIL in Elixir: We can have two functions with the same name'
+  published_at: '2026-05-01'

@@ -1,0 +1,27 @@
+---
+layout: layouts/base.njk
+title: Home
+permalink: /
+fullBleed: true
+---
+{% include "partials/hero.njk" %}
+
+<section class="section section-posts">
+  <div class="section-inner">
+    <h2 class="section-heading">Writing</h2>
+    <p class="section-lead">Personal blog — software, health, and navigating life. <a href="/feed.xml">RSS</a></p>
+
+    <ul class="article-list">
+    {%- for post in collections.articles %}
+      {%- if loop.index0 < 5 %}
+      <li>
+        <a href="{{ post.url }}">{{ post.data.title }}</a>
+        <time datetime="{{ post.date | isoDate }}">{{ post.date | readableDate }}</time>
+      </li>
+      {%- endif %}
+    {%- endfor %}
+    </ul>
+
+    <p class="section-footer-link"><a class="btn btn-pill" href="/articles/">All articles →</a></p>
+  </div>
+</section>

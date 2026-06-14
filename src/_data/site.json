@@ -1,0 +1,20 @@
+{
+  "name": "Rinas",
+  "url": "https://blog.onerinas.com",
+  "description": "Product Engineer. A generalist who loves building apps.",
+  "tagline": "Product Engineer. A generalist who loves building apps.",
+  "location": "Dubai, United Arab Emirates",
+  "email": "hello@onerinas.com",
+  "calendly": "https://calendly.com/rinas",
+  "linkedin": "https://www.linkedin.com/in/onerinas",
+  "github": "https://github.com/onerinas",
+  "twitter": "https://x.com/onerinas",
+  "wip": "https://wip.co/@onerinas",
+  "newsletter": "https://buttondown.com/onerinas",
+  "techStack": [
+    "Ruby on Rails",
+    "Product Development",
+    "Flutter",
+    "Mobile Development"
+  ]
+}

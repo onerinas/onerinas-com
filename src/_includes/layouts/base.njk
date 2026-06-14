@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>{% if title %}{{ title }} · {% endif %}{{ site.name }}</title>
+  <meta name="description" content="{{ description or site.description }}">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/css/style.css">
+  <link rel="alternate" type="application/atom+xml" title="{{ site.name }} — Articles" href="/feed.xml">
+</head>
+<body{% if fullBleed %} class="page-full-bleed"{% endif %}>
+  <header class="site-header">
+    <div class="container">
+      <a class="site-title" href="/">{{ site.name }}</a>
+      <nav aria-label="Main">
+        <ul class="nav">
+          <li><a href="/"{% if page.url == "/" %} aria-current="page"{% endif %}>Home</a></li>
+          <li><a href="/about/"{% if page.url == "/about/" %} aria-current="page"{% endif %}>About</a></li>
+          <li><a href="/work/"{% if page.url == "/work/" %} aria-current="page"{% endif %}>Work</a></li>
+          <li><a href="/projects/"{% if page.url == "/projects/" %} aria-current="page"{% endif %}>Projects</a></li>
+          <li><a href="/articles/"{% if page.url == "/articles/" or (tags is defined and "articles" in tags) %} aria-current="page"{% endif %}>Blog</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main{% if not fullBleed %} class="container container-narrow"{% endif %}>
+    {{ content | safe }}
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <p class="footer-copy">&copy; {{ currentYear }} {{ site.name }}</p>
+      <span class="footer-sep" aria-hidden="true">·</span>
+      <a class="footer-links" href="/links/"{% if page.url == "/links/" %} aria-current="page"{% endif %}>Links</a>
+    </div>
+  </footer>
+</body>
+</html>

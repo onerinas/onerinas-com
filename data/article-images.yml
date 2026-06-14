@@ -1,0 +1,106 @@
+# Curated mapping: article markdown file → local R2 filename (highest quality chosen).
+# Duplicates skipped — see data/image-mapping.json after install for full audit.
+#
+# Format:
+#   - article: src/articles/{file}.md
+#     images:
+#       - source: {r2-filename}
+#         # replaces Nth blog.onerinas.com image URL in file (0-based)
+
+- article: 2-10-day-streak-for-a-big-time-procrastinator.md
+  images:
+    - source: 2zpzv7lsco6bu6lpuy75bx10ijic.jpg
+      # duplicate of y733pz2g1euimfyevd61ih400zbo.jpg — same md5, kept larger name
+
+- article: 3-why-and-how-i-built-highscore-domains.md
+  images:
+    - source: u8hg0m8hn2vtf3vjo21v45ki71pu.png
+      # early 4-person leaderboard (also gcvyrabff… duplicate quality)
+    - source: 0c9qt4q321wyddigxkb48ha8p0mk.png
+      # current people leaderboard + Product Hunt (1024px vs x9szhss 800px)
+    - source: 40myx6xn0p9323h7jcakn6vhl124.png
+      # domains tab (1024px vs cyhv47qn 800px)
+
+- article: 4-let-it-itch-for-a-while.md
+  images:
+    - source: tyq2r7gw2lcshvgop8gswbbg0klw.png
+      # Workflowy projects/ideas (full 1696px; 7nun8u58… is smaller duplicate)
+
+- article: 12-what-s-up-with-my-blogging-platform-in-jan-2024.md
+  images:
+    - source: 2pn1w60opkkfp8je07d14wpvgnnd.png
+      # Fathom Jan 2024 (2832px; g7cry0gn… is 1024px resize)
+
+- article: 14-what-s-up-with-my-blogging-platform-in-feb-2024.md
+  images:
+    - source: z1zztruksv7v98tb0eqe8hjca9fz.png
+      # Fathom Feb 2024 (3754px; jz5dua3s… is 1024px resize)
+
+- article: 21-a-little-hack-that-keeps-me-sane.md
+  images:
+    - source: f7ok4e3utohxso3vlv7m4v4gf7xl.png
+      # Reminders (1298px; d02ji4r2… is 1024px resize)
+    - source: af4w0a2uuu34t0mjmn6e4150i1yi.png
+      # Twitter #buildinpublic (1158px; 1eja3noa… is 1024px resize)
+
+- article: 36-til-in-flutter-we-can-do-flutter-pub-deps-to-list-all-dependencies-used-in-a-nice-format.md
+  images:
+    - source: 9jzdw4kcwnul6tmsbveadyvzdmqi.jpg
+      # 820×1778; 4rgw44sz… / 7w7vjziq… are 354px thumbnails
+
+- article: 39-til-in-rails-time-current-all_month-to-get-the-whole-range.md
+  images:
+    - source: 0eetr8rdicv8jfcahnpyqbzw0mid.png
+      # all_month() docs (5y4i8b9c… is wider crop of same)
+
+- article: 44-til-in-rails-model-none-returns-a-chainable-relation-with-zero-records.md
+  images:
+    - source: mk3lglk4ph4dvucq137afdd9lwnj.png
+      # none() docs (2068px; zr8d595b… is 1024px resize)
+
+- article: 48-til-in-ruby-arity.md
+  images:
+    - source: dnvz02smskqux59ejcv2un1v9pae.png
+      # arity docs (2918px; k666s1f9… is 1024px resize)
+
+- article: 49-til-learned-about-a-new-gem-decent_exposure.md
+  images:
+    - source: u96jcfu94jq7npe6sf5pxxc7wr1i.png
+      # README (670px wide, 275KB; 45xz78ot… is same content smaller)
+
+- article: 51-til-in-flutter-we-can-specify-the-app-version-and-build-number-in-pubspec-yaml.md
+  images:
+    - source: gnflozn54r3682b2fo3i6cvet9xd.png
+      # pubspec.yaml (330KB; dgqizfhj… is same content smaller)
+
+- article: 52-til-we-can-use-xed-to-open-xcode-with-given-folder-or-project.md
+  images:
+    - source: 0pfjuldfw07s1za03vaur3cqjuoi.png
+      # xed terminal + Xcode (2312px)
+
+- article: 55-til-in-flutter-ios-no-transparent-images-allowed-in-assets.md
+  images:
+    - source: ntwtrgkvqk13n0d8v1ykfhg5q5jh.jpg
+      # App Store icon error (2272px; ct8pa9kl… is 1024px resize)
+
+- article: 59-til-about-using-counter_cache-in-rails-to-save-association-s-count-in-parent-model.md
+  images:
+    - source: 38f5swom8pkc4yu64a3323x1n8cb.png
+      # counter_cache SO (128KB; 6qjyrlhh… is same content smaller)
+
+- article: 60-til-how-to-select-values-from-one-column-without-nil-in-rails.md
+  images:
+    - source: dgbdy92iz63t7y8e3flbcow4t2b6.png
+      # Page.pluck (fr0utv56… is same screenshot)
+    - source: mxozpp9m7tsazxoede2tqm4f2a0v.png
+      # Page.pluck.compact
+
+- article: 63-til-what-policy-to-use-for-aws-s3-to-work-with-rails-active-storage.md
+  images:
+    - source: 73nh4l0bv8o6hwva1nbnnwht0xh7.png
+      # IAM JSON (131KB; d9g18vn1… is same content smaller)
+
+- article: 64-til-how-to-colour-console-logs.md
+  images:
+    - source: calhfgp4n0zo2vcg54qkq1q8a0mh.png
+      # console.log %c (874px; kpfbj958… / n8572n1g… are duplicates)
